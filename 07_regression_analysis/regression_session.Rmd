@@ -1,0 +1,89 @@
+---
+title: "Regression Session"
+output: pdf_document
+---
+
+### Executive summary
+The impact on transmission class (automatic vs manual) on vehicle miles per gallon (MPG) was analyzed, along with several other data that may explain variation in MPG rating. It was found that, while vehicle weight was the principal determinant of MPG, transmission class had the second largest impact of the measured vehicle dimensions, and an automatic transmission decreases the MPG of a vehicle beyond our 95% confidence interval.
+
+# Exploratory Data Analysis
+Let's have a look at the data.
+
+```{r fig1, fig.height = 3, fig.width = 5}
+library(ggplot2)
+data(mtcars)
+#mtcars$am <- factor(mtcars$am)
+colnames(mtcars)
+ggplot(mtcars, aes(y=mtcars$mpg, x=mtcars$am, group=mtcars$am)) +
+        geom_point() + 
+        ylab('MPG') + 
+        xlab('Manual transmission?')
+
+```
+
+It seems that the manual transmission cars (x=1) have a higher MPG on average.
+We will follow up with some summary stats and do a regression analysis.
+
+
+```{r , echo=FALSE}
+print('Automatic transmission mean mpg')
+mean(mtcars[mtcars$am==0,]$mpg)
+
+print('Manual transmission mean mpg')
+mean(mtcars[mtcars$am==1,]$mpg)
+
+t.test(mtcars$mpg[mtcars$am == 0], mtcars$mpg[mtcars$am == 1])
+
+```
+The t-test indicates that the null hypothesis remains outside of the 95% confidence interval, thus we infer that the mpg ratings for automatic and manual cars are truly drawn from separate distributions.
+
+Can we model this difference? 
+
+# Preliminary linear model fitting
+Now we'll have a look at a very simple univariate linear model, using only transmission class as a predictor:
+
+```{r fig2, fig.height = 3, fig.width = 5}
+model <- lm(mpg ~ am-1, data=mtcars)
+summary(model)
+plot(model, which = 1)
+
+```
+It seems that the residuals are substantially higher for the automatic transmission cars (dummy var = 0) than for the manuals. Perhaps there is another variable that will explain the variation that the model is missing. 
+
+# A better model?
+
+Let's include all of the varibles in the model and scrutinze their regression coeffecients.
+
+Are there any other factors that we can account for in the dataset that influence MPG? We will employ a linear model to fit the data, because this is a simple model that is readily interpreted post hoc.
+
+```{r fig3, fig.height = 3, fig.width = 5}
+model <- lm(mpg ~.-1, data=mtcars)
+summary(model)
+plot(model, which = 1)
+
+```
+
+# Model interpretation
+Looking at the regression coefficients, we see that vehicle weight has the greatest effect on the MPG rating, but the transmission class has the second greatest weight.
+
+This makes intuitive sense, given that heavier things require more gas to push.
+
+This model seems pretty good- the residuals appear more or less randomly distributed. 
+
+The R^2 is also much closer to 1 than the previous model, indicating a better fit to the data.
+
+From the residual coefficient for transmission class:
+
+```{r}
+
+exp(2.83222)
+exp(1.97513)
+
+```
+Thus, in our model, having a manual transmission correlates with ~17 additional MPG for the car with a standard error in this estimate of 7.2 MPG. 
+
+
+
+
+
+

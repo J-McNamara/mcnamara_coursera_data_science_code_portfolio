@@ -1,0 +1,52 @@
+---
+title: "Basic inferential data analysis"
+author: "Josh McNamara"
+date: "7/9/2019"
+output: pdf_document
+---
+
+### From the Rstudio guide:
+The response is the length of odontoblasts (cells responsible for tooth growth) in 60 guinea pigs. Each animal received one of three dose levels of vitamin C (0.5, 1, and 2 mg/day) by one of two delivery methods, orange juice or ascorbic acid (a form of vitamin C and coded as VC).
+
+I will do some exploratory analysis on this. 
+
+# Load the data and set up
+
+```{r}
+library(ggplot2)
+data("ToothGrowth")
+df <- ToothGrowth
+df$dose <- as.factor(df$dose)
+```
+
+# Data summary
+Have a look at the data, see what the variables are, see how they relate.
+```{r}
+# Summary of the data
+summary(df)
+str(df)
+ggplot(df, aes(x = dose, y=len, fill=supp)) + geom_violin()
+
+```
+There are two major conditions (Vitamin C and Orange juice dosing) taken thorough dose escalation for several animals. 
+
+It seems that OJ might be a more potent dosing method for a 1 mg dose. Let's test this. 
+
+# Does the delivery method impact the response at a 1 mg dose?
+I will perform a two-sample t-test to gauge whether these two dosing measures may pertain to different distributions. I hypothesize that the orange juice has a significantly greater effect on the length variable than vitamin C alone.
+
+```{r}
+# My hypothesis is that for a dose of 1 mg, orange juice causes more growth than vitamin C alone
+
+oj <- df$len[df$dose==1 & df$supp=='OJ']
+vc <- df$len[df$dose==1][df$supp=='VC']
+t.test(x = oj, y = vc, conf.level = .95)
+
+```
+
+# Conclusion
+
+The t sample statistic is within the 95% confidence interval. Thus, we fail to reject the null hypothesis that the treatments outcomes pertain to the same distribution. This test assumed that the data are normally distributed. If they are not, the t-test is not a valid test.
+
+
+
