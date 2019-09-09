@@ -1,0 +1,81 @@
+---
+title: "Classifying activity patterns"
+output: html_document
+---
+
+# Purpose
+The purpose of this project is to attempt to classify activity patterns by thier movement quality. Completed as part of the data science specialization for Coursera.
+
+# Set up the environment
+```{r }
+knitr::opts_chunk$set(echo = TRUE)
+
+ptm <- proc.time() # Measure runtime
+# Set up the environment
+library(caret)
+library(beepr)
+#library(ggpolot2)
+#library(ElemStatLearn)
+#library(dplyr)
+#library(e1071)
+set.seed(25246)
+```
+
+# Load the data, clean the data, set test flags, and preprocess.
+25% of the dataset will be used for testing to estimate out-of-sample error.
+Preprocessing will consist of centering and scaling.
+Variables with complete data for all observations will be used, others will be discarded. The index observation will also be discarded, as it should have no predictive value and is spuriously correlated with the data, which are sorted by the classe variable.
+```{r }
+# Load the data
+df <- read.csv('pml-training.csv')
+validation <- read.csv('pml-testing.csv')
+
+# Get rid of junk data
+used <- !is.na(validation[4,])
+df <- df[,used] # Only include variables used in val
+validation <- validation[,used] # get rid of empties
+df <- df[,2:60] # The data are sorted- get rid of index!
+validation <- validation[,2:60] #  The data are sorted- get rid of index!
+
+# Generate a test set
+inTrain = createDataPartition(df$classe, p = 0.75)[[1]]
+training <- df[inTrain,]
+testing <- df[-inTrain,]
+
+# Center and scale the values
+pre_proc <- preProcess(training, method = c("center", "scale"))
+training_processed <- predict(pre_proc, training)
+testing_processed <- predict(pre_proc, testing)
+validation_processed <- predict(pre_proc, validation)
+```
+
+# Train a model
+Boosting will be used to generate a classifier model.
+The model will be saved and loaded to avoid lengthy re-training at each analysis.
+```{r }
+# Train ML model
+#model <- train(classe~., data=training_processed, method='gbm')#, na.action = na.pass)
+#save(file='model_04.Rda', model)
+load(file='model_04.Rda')
+```
+# Evaluate the model
+A confusion matrix will be calculated between the predictions for the test set and the pre-processed test set. 
+```{r}
+# Evaluate model on test set
+test_preds <- predict(model, testing_processed)
+test_matrix <- confusionMatrix(test_preds, testing_processed$classe)
+test_matrix
+```
+
+# Validation / application
+The tested model will now be applied to a dataset with unknown classes.
+```{r}
+# Make predictions for validation set
+val_preds <- predict(model, validation_processed)
+save(val_preds, file='val_preds.Rda')
+val_preds
+
+beep()
+proc.time() - ptm
+
+```
