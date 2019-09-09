@@ -1,0 +1,92 @@
+<style>
+body {
+    overflow: scroll;
+}
+</style>
+Text prediction Shiny app
+========================================================
+author: Josh McNamara
+date: 2019
+autosize: true
+
+Project for Coursera Data Science Capstone Project
+
+Goal of the text prediction product
+========================================================
+
+- The goal is to deploy a web app that can predict the next word in a typed sequence.
+- The project was split in three phases- development of a corpus for text mining, development of a prediction algorithm, deployment on a web server
+- The application must make a reasonable word prediction within ~1 second for most typed sequences
+
+Corpus construction
+========================================================
+- The corpus was constructed by combining 3% of the lines in each data set (Twitter, news, blogs)
+- Various data cleaning schemes were applied, but the algorithm makes the most realistic predictions has minimally altered text. Contractions were expanded to their full forms. The RWeka word tokenizer was applied to extract tokens and exclude special characters.
+- The prediction model predicts the last word in a trigram, so trigrams were extracted from the corpus and sorted by frequency. The 75,000 most frequent trigrams were kept to give reasonable breadth and keep the storage demands to less than a few Mb.
+- Here is a sample of 3 lines from the corpus, and then a sample of 3 n-grams
+
+```{r echo=FALSE}
+set.seed(1775)
+load('data/n_grams.Rda')
+load('data/train.Rda')
+#Sys.setenv(JAVA_HOME='/usr/bin/java')
+# Might need to run this fin the terminal:
+# sudo R CMD javareconf
+#library(rJava)
+#library(RWeka)
+#library(openNLP)
+#library(ggplot2)
+#library(dplyr)
+#library(magrittr)
+#install.packages('slam')
+#library(slam)
+#library(tm)
+
+sample(train, 3)
+load('data/n_grams.Rda')
+sample(n_grams, 3)
+```
+
+Prediction model design
+========================================================
+* The prediction model follows a very simple decision tree:
+    - grep for the last bigram entered in the first two positions in the bank of trigrams and return the third element of the trigram with the highest frequency in the corpora
+    - Otherwise, return the most common English word: 'the'.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+predict <- function(inp, n_grams){
+        # Make input the last two words
+        inp <- WordTokenizer(inp) # Clean the input
+        inp <- inp[(length(inp)-1):length(inp)] # Select the last two words from the input
+        
+        # Return 3rd elemnt of matching trigrams
+        inp <- paste('^', inp[1], ' ', inp[2], ' ', sep='') # Convert tokenized input to string
+        out <- grep(x=corpora, pattern=inp, value = TRUE) # Search the trigram bank for the last two typed words
+        
+        # Return function
+        if (length(out)) {
+                out <- out[1] # Select most frequent trigram
+                out <- WordTokenizer(out)[3] # Output third element of chosen trigram
+        }
+        else {
+           return('the')     # If there is no prediction for the phrase, output the most common English word.
+        }
+}
+```
+
+Shiny App Data Product
+========================================================
+- The application can be accessed here:
+https://mcnamara.shinyapps.io/autocomplete_shiny_app/
+- It looks like this:
+
+
+![title](data/image.png)
+
+
+```{r, echo=FALSE}
+
+
+
+
+```

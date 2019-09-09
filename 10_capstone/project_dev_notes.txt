@@ -1,0 +1,17 @@
+Project dev notes
+=========
+
+To do:
+======
+- Make the corpora generation kick out a training and test set
+- Make a new test training divide-
+	- Make a function go through 90% of the corpora and pick out the most frequent n-grams
+	- Then test on remaining 10%
+	- Check data type classes on these to make sure they are accepted by the prediction algo
+
+- Clean up subsequent prediction model to accept new inputs
+- Write a testing function that pulls a random trigram from the test set
+- Write an eval function that tests the prediction algo
+- Finish slides evaluating progress
+- Write a contraction expander that works on the tokens?
+- Expand contractions with grep before tokenization with tm package

@@ -1,0 +1,2373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+            <script src="https://www.numbeo.com/common/numbeo_standard.js"></script>
+    <link type="text/css" href="https://www.numbeo.com/common/css/redmond/jquery-ui-1.10.3.custom.min.css" rel="Stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.numbeo.com/favicon.ico" />
+    <script src="https://www.numbeo.com/common/js/jquery-1.10.2.min.js"></script>
+    <script src="https://www.numbeo.com/common/js/jquery-ui-1.10.3.custom.min.js"></script>
+   <script src='https://www.google.com/jsapi'></script>
+    <link rel="stylesheet" type="text/css" href="https://www.numbeo.com/common/style.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.numbeo.com/common/style_desktop.css" />
+<script>
+$(document).ready(function(){
+	$("#nav-one li").hover(
+		function(){ $("ul", this).fadeIn("fast"); },
+		function() { }
+	);
+	if (document.all) {
+		$("#nav-one li").hoverClass ("sfHover");
+	}
+});
+$.fn.hoverClass = function(c) {
+	return this.each(function(){
+		$(this).hover(
+			function() { $(this).addClass(c);  },
+			function() { $(this).removeClass(c); }
+		);
+	});
+};
+</script>
+<link rel="stylesheet" type="text/css" href="https://www.numbeo.com/common/css/datatables/dataTables.jqueryui.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.numbeo.com/common/css/datatables/datables_custom.css"/>
+<script src="https://www.numbeo.com/common/js/jquery.dataTables.js"></script>
+<script src="https://www.numbeo.com/common/js/dataTables.jqueryui.js"></script>
+
+<title>Northern America: Cost of Living Index by City 2018</title>
+</head>
+
+<body>
+
+<aside><div class="top_ad">
+<div class="innerWidth">
+<div style="display: block; height: 90px; width: 728px; margin: 0 auto;">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad_in_header3 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-8993465169534557"
+     data-ad-slot="7618322317"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+</div>
+</div>
+</aside><div class="innerWidth">
+<div class="logo-and-upper-ad">
+<table style="border-spacing: 0px; width: 100%; margin-top: 7px; margin-bottom: 1px;" >
+<tr>
+<td style="padding-top: 0px; padding-bottom: 7px; vertical-align: bottom;">
+<a href="https://www.numbeo.com/cost-of-living/" style="border: 0; text-decoration:none;">
+<img src="https://www.numbeo.com/images/numbeo_icon.svg" style="height: 62px; vertical-align: bottom; border: 0;" alt="" /><img src="https://www.numbeo.com/images/numbeo_text.svg" style="height: 34px; margin-left: 1em; margin-bottom: 8px; vertical-align: bottom; border: 0;" alt="NUMBEO" /></a>
+</td>
+<td style="padding-left:8px; padding-top: 0px; padding-bottom: 0px; vertical-align: middle; width: 680px; text-align: right;" >
+<div style="display: inline-block; width: 100%; margin-top: 10px; margin-bottom: 10px; text-align: right; vertical-align: bottom">
+<nav style="display: inline-block; vertical-align: middle; padding-left: 0.5em;">
+<div class="standard_margin_inlineblock">
+<select name="city_result_switcher" id="city_result_switcher"  onchange="window.location = this.value;" class="result_switcher ">
+<option value="" selected="selected">What are you looking for?</option>
+<option value="https://www.numbeo.com/cost-of-living/">Cost of Living</option>
+<option value="https://www.numbeo.com/crime/">Crime</option>
+<option value="https://www.numbeo.com/climate/">Climate</option>
+<option value="https://www.numbeo.com/food-prices/">Food Prices</option>
+<option value="https://www.numbeo.com/gas-prices/">Gas Prices</option>
+<option value="https://www.numbeo.com/health-care/">Health Care</option>
+<option value="https://www.numbeo.com/pollution/">Pollution</option>
+<option value="https://www.numbeo.com/property-investment/">Property Prices</option>
+<option value="https://www.numbeo.com/quality-of-life/">Quality of Life</option>
+<option value="https://www.numbeo.com/taxi-fare/">Taxi Fare</option>
+<option value="https://www.numbeo.com/traffic/">Traffic</option>
+</select>
+</div>
+</nav>
+<nav style="display: inline-block; vertical-align: middle;">
+<div class="standard_margin_inlineblock" >      <form action="https://www.numbeo.com/common/dispatcher.jsp" method="get" id="menu_dispatch_form"  style="display: inline; padding: 0; margin:0;">
+      <input type="hidden" name="where" value="https://www.numbeo.com/cost-of-living/in/" style="display: inline; padding:0; margin:0;" />
+<input id="city_selector_menu_city_id"  size="27"  type="text" placeholder="Select City" class="city-selector-menu" />
+<input type="hidden" id="menu_city_id" name="city_id"/>
+<input type="hidden" id="name_menu_city_id" name="name_city_id"/>
+      </form>
+</div>
+ <script>
+  jQuery(document).ready(function($) {
+  	jQuery('#city_selector_menu_city_id').autocomplete({
+  	  source: 'https://www.numbeo.com/common/CitySearchJson',
+     minLength: 1,
+     delay: 3,
+     autoFocus: true,
+     select: function(event, ui) {
+         event.preventDefault();
+         $('#city_selector_menu_city_id').val(ui.item.label);
+         $('#menu_city_id').val(ui.item.value);
+jQuery('#menu_dispatch_form').submit();     },
+     focus: function(event, ui) {
+         event.preventDefault();
+     }
+	  })   .keydown(function(e){
+	    if (e.keyCode === 13){
+      if ($('#menu_city_id').val() == '') { 
+        e.preventDefault();
+      }
+      var val = $('#city_selector_menu_city_id').val();
+		   $('#name_menu_city_id').val(val);
+	   }
+  }); // end autocompleter definition
+$('#city_selector_menu_city_id').toggleClass('city-selector-menu');
+$('#city_selector_menu_city_id').toggleClass('city-selector-menu');
+ }); // end document ready 
+</script>
+</nav>
+</div>
+</td>
+</tr>
+</table>
+</div> <!-- logo-and-upper-ad -->
+<div class="dropdown-outer">
+<nav class="before-nav" >
+    <ul id="nav-one" class="nav">
+
+	<li class="dir">
+<a href="https://www.numbeo.com/cost-of-living/">Cost Of Living</a>
+  <ul>
+    <li><a href="https://www.numbeo.com/cost-of-living/">Cost Of Living</a></li>
+    <li><a href="https://www.numbeo.com/cost-of-living/comparison.jsp">Cost of Living Comparison</a></li>
+    <li><a href="https://www.numbeo.com/cost-of-living/calculator.jsp">Cost of Living Calculator</a></li>
+    <li><a href="https://www.numbeo.com/cost-of-living/rankings_current.jsp">Cost Of Living Index (Current)</a></li>
+    <li><a href="https://www.numbeo.com/cost-of-living/rankings.jsp">Cost Of Living Index</a></li>
+    <li><a href="https://www.numbeo.com/cost-of-living/rankings_by_country.jsp">Cost Of Living Index By Country</a></li>
+    <li><a href="https://www.numbeo.com/cost-of-living/estimator_main">Cost of Living Estimator</a></li>
+    <li><a href="https://www.numbeo.com/cost-of-living/prices_by_city.jsp">Prices By City</a></li>
+    <li><a href="https://www.numbeo.com/cost-of-living/prices_by_country.jsp">Prices By Country</a></li>
+    <li><a href="https://www.numbeo.com/cost-of-living/historical-data">Historical Data in a City by Year </a></li>
+    <li><a href="https://www.numbeo.com/cost-of-living/historical-prices-by-city">Historical Data in a Year by City</a></li>
+    <li><a href="https://www.numbeo.com/food-prices/">Food Prices</a></li>
+    <li><a href="https://www.numbeo.com/cost-of-living/basket_of_goods.jsp">Basket of Goods and Services</a></li>
+    <li><a href="https://www.numbeo.com/common/motivation_and_methodology.jsp">Our Motivation and Methodology</a></li>
+    <li><a href="https://www.numbeo.com/cost-of-living/contribute.jsp">Update Information for Your City</a></li>
+  </ul></li>
+
+	<li class="dir">
+<a href="https://www.numbeo.com/property-investment/">Property Prices</a>
+  <ul>
+    <li><a href="https://www.numbeo.com/property-investment/">Property Prices</a></li>
+    <li><a href="https://www.numbeo.com/property-investment/comparison.jsp">Property Prices Comparison</a></li>
+    <li><a href="https://www.numbeo.com/property-investment/rankings_current.jsp">Property Price Index (Current)</a></li>
+    <li><a href="https://www.numbeo.com/property-investment/rankings.jsp">Property Price Index</a></li>
+    <li><a href="https://www.numbeo.com/property-investment/rankings_by_country.jsp">Property Price Index By Country</a></li>
+   </ul></li>
+
+	<li class="dir">
+<a href="https://www.numbeo.com/crime/">Crime</a>
+  <ul>
+    <li><a href="https://www.numbeo.com/crime/">Crime</a></li>
+    <li><a href="https://www.numbeo.com/crime/comparison.jsp">Crime Comparisons</a></li>
+    <li><a href="https://www.numbeo.com/crime/rankings_current.jsp">Crime Index (Current)</a></li>
+    <li><a href="https://www.numbeo.com/crime/rankings.jsp">Crime Index</a></li>
+    <li><a href="https://www.numbeo.com/crime/rankings_by_country.jsp">Crime Index by Country</a></li>
+  </ul></li>
+
+	<li class="dir">
+<a href="https://www.numbeo.com/health-care/">Health Care</a>
+  <ul>
+    <li><a href="https://www.numbeo.com/health-care/">Health Care</a></li>
+    <li><a href="https://www.numbeo.com/health-care/comparison.jsp">Health Care Comparisons</a></li>
+    <li><a href="https://www.numbeo.com/health-care/rankings_current.jsp">Health Care Index (Current)</a></li>
+    <li><a href="https://www.numbeo.com/health-care/rankings.jsp">Health Care Index</a></li>
+    <li><a href="https://www.numbeo.com/health-care/rankings_by_country.jsp">Health Care Index by Country</a></li>
+  </ul></li>
+
+	<li class="dir">
+<a href="https://www.numbeo.com/pollution/">Pollution</a>
+  <ul>
+    <li><a href="https://www.numbeo.com/pollution/">Pollution</a></li>
+    <li><a href="https://www.numbeo.com/pollution/comparison.jsp">Pollution Comparisons</a></li>
+    <li><a href="https://www.numbeo.com/pollution/rankings_current.jsp">Pollution Index (Current)</a></li>
+    <li><a href="https://www.numbeo.com/pollution/rankings.jsp">Pollution Index</a></li>
+    <li><a href="https://www.numbeo.com/pollution/rankings_by_country.jsp">Pollution Index by Country</a></li>
+  </ul></li>
+
+	<li class="dir">
+<a href="https://www.numbeo.com/traffic/">Traffic</a>
+  <ul>
+     <li><a href="https://www.numbeo.com/traffic/">Traffic</a></li>
+     <li><a href="https://www.numbeo.com/traffic/comparison.jsp">Traffic Comparisons</a></li>
+     <li><a href="https://www.numbeo.com/traffic/rankings_current.jsp">Traffic Index (Current)</a></li>
+     <li><a href="https://www.numbeo.com/traffic/rankings.jsp">Traffic Index</a></li>
+     <li><a href="https://www.numbeo.com/traffic/rankings_by_country.jsp">Traffic Index by Country</a></li>
+  </ul></li>
+
+	<li class="dir">
+<a href="https://www.numbeo.com/quality-of-life/">Quality Of Life</a>
+  <ul>
+    <li><a href="https://www.numbeo.com/quality-of-life/">Quality of Life</a></li>
+    <li><a href="https://www.numbeo.com/quality-of-life/comparison.jsp">Quality of Life Comparisons</a></li>
+    <li><a href="https://www.numbeo.com/quality-of-life/rankings_current.jsp">Quality of Life Index (Current)</a></li>
+    <li><a href="https://www.numbeo.com/quality-of-life/rankings.jsp">Quality of Life Index</a></li>
+    <li><a href="https://www.numbeo.com/quality-of-life/rankings_by_country.jsp">Quality of Life Index by Country</a></li>
+	</ul></li>
+	<li class="dir">
+<a href="#">Travel</a>
+  <ul>
+    <li><a href="https://www.numbeo.com/taxi-fare/">Taxi Fare Calculator</a></li>
+    <li><a href="https://www.numbeo.com/gas-prices/">Gas Prices Calculator</a></li>
+	</ul></li>
+
+
+</ul>
+<br style="clear: both"/>
+</nav>
+</div> <!-- dropdown-outer -->
+ <div class="right-ads-and-info">
+ <div class="right-ads">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- numbeo2_0 ads_right_med_rect -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-8993465169534557"
+     data-ad-slot="8165022551"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+ </div>
+ </div>
+<p>
+<nav itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
+<a href="https://www.numbeo.com/common/" class="discreet_link"><img src="https://www.numbeo.com/images/home.png" class="image_without_border hide_smaller_than_600" alt="home"/></a><span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<a href="https://www.numbeo.com/cost-of-living/" itemprop="item" class="breadcrumb_link"><span itemprop="name">Cost of Living</span></a><meta itemprop="position" content="1" />
+</span> <span style="font-size: 75%; display: inline-block;">&gt;</span> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+ <a href="https://www.numbeo.com/cost-of-living/rankings.jsp"  itemprop="item"  class="breadcrumb_link"><span itemprop="name">Index by City</span></a><meta itemprop="position" content="2" />
+</span> <span style="font-size: 75%; display: inline-block;">&gt;</span> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<a href="region_rankings.jsp?title=2018&amp;region=019"  itemprop="item"  class="breadcrumb_link">
+<span itemprop="name">America</span></a><meta itemprop="position" content="3" />
+</span> <span style="font-size: 75%; display: inline-block;">&gt;</span> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<a href="region_rankings.jsp?title=2018&amp;region=021"  itemprop="item"  class="breadcrumb_link">
+<span itemprop="name">Northern America</span></a><meta itemprop="position" content="4" />
+</span>
+</nav>
+    <h1> Northern America: Cost of Living Index 2018</h1>
+<!-- social share start -->
+<aside>
+<table class="social_share " >
+<tr>
+<td class="social-inner" style="height: 100%; overflow-y: hidden; vertical-align: top"> 
+<div style="display: inline-block; height: 24px; max-height: 24px; overflow-y: hidden; min-width: 1px;">
+<div class="fb-like" data-width="24" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+</div>
+</td>
+<td class="social-inner" style="height: 24px; overflow-y: hidden; vertical-align: top" >
+<div style="display: inline-block; max-height: 24px; overflow-y: hidden; min-width: 1px;">
+<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="Numbeo" data-related="mladenadamovic" rel="nofollow">Tweet</a></div>
+</td>
+</tr>
+</table>
+</aside>
+
+
+
+
+<div id="page_container">
+<div class="new_div_indices_info">
+<a href="https://www.numbeo.com/cost-of-living/cpi_explained.jsp" title="About these indices" class="indices_info">
+        <img src="https://www.numbeo.com/images/information.png" class="image_help" alt="Info"/> More information about these indices</a></div>
+ <form method="get" class="changePageForm" action="https://www.numbeo.com/cost-of-living/region_rankings.jsp">
+ Select date: <select name="title"  onchange="this.form.submit();">
+  <option value="2019">2019</option>
+  <option value="2018-mid">2018 Mid-Year</option>
+  <option value="2018" selected="selected">2018</option>
+  <option value="2017-mid">2017 Mid-Year</option>
+  <option value="2017">2017</option>
+  <option value="2016-mid">2016 Mid-Year</option>
+  <option value="2016">2016</option>
+  <option value="2015-mid">2015 Mid-Year</option>
+  <option value="2015">2015</option>
+  <option value="2014-mid">2014 Mid-Year</option>
+  <option value="2014">2014</option>
+  <option value="2013">2013</option>
+  <option value="2012">2012</option>
+  <option value="2011">2011</option>
+  <option value="2010">2010</option>
+  <option value="2009">2009</option>
+</select>
+  <input type="hidden" name="region" value="021" />
+ </form>
+
+
+<script>
+google.load('visualization', '1', {'packages': ['geochart']});
+ google.setOnLoadCallback(drawMarkersMap);
+  function drawMarkersMap() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Lat'); // Latitude Value
+        data.addColumn('number', 'Lon'); // Longitude Value
+        data.addColumn('string', 'Name'); // 
+        data.addColumn('number', 'Cost of Living Index', 'Value'); // 
+data.addRows([
+[48.7595529, -122.4882249, "Bellingham, WA, United States", 77.13],
+[42.9956397, -71.4547891, "Manchester, NH, United States", 71.46],
+[33.4734978, -82.0105148, "Augusta, GA, United States", 74.29],
+[39.165325, -86.5263857, "Bloomington, IN, United States", 92.14],
+[44.0520691, -123.0867536, "Eugene, OR, United States", 78.94],
+[39.0839973, -77.1527578, "Rockville, MD, United States", 92.66],
+[43.661471, -70.2553259, "Portland, ME, United States", 81.60],
+[42.6525793, -73.7562317, "Albany, NY, United States", 80.19],
+[44.4758825, -73.212072, "Burlington, VT, United States", 78.89],
+[39.7589478, -84.1916069, "Dayton, OH, United States", 69.76],
+[44.3787033, -79.7030516, "Barrie, Canada", 79.18],
+[43.714575, -79.7523867, "Brampton, Canada", 77.90],
+[44.9391565, -123.033121, "Salem, OR, United States", 69.81],
+[43.3487, -79.7903, "Burlington, Canada", 74.32],
+[41.3081527, -72.9281577, "New Haven, CT, United States", 84.13],
+[51.0486151, -114.0708459, "Calgary, Canada", 76.44],
+[53.544389, -113.4909267, "Edmonton, Canada", 76.01],
+[43.0481221, -76.1474244, "Syracuse, NY, United States", 72.88],
+[45.483933, -75.645632, "Gatineau, Canada", 69.17],
+[43.539102, -80.247622, "Guelph, Canada", 72.93],
+[40.7498243, -73.7976337, "Queens, NY, United States", 80.77],
+[43.25002080000001, -79.8660914, "Hamilton, Canada", 65.26],
+[34.8526176, -82.3940104, "Greenville, SC, United States", 74.08],
+[44.648881, -63.575312, "Halifax, Canada", 82.03],
+[49.8876629, -119.4961612, "Kelowna, Canada", 74.78],
+[43.4129238, -80.47714719999999, "Kitchener, Canada", 63.90],
+[42.988097, -81.2460295, "London, Canada", 69.39],
+[43.5892854, -79.6441646, "Mississauga, Canada", 72.54],
+[46.0878165, -64.7782313, "Moncton, Canada", 71.79],
+[45.4215296, -75.69719309999999, "Ottawa, Canada", 69.91],
+[50.4452112, -104.6188944, "Regina, Canada", 72.85],
+[41.0814447, -81.5190053, "Akron, OH, United States", 72.65],
+[26.640628, -81.8723084, "Fort Myers, FL, United States", 68.06],
+[35.0844909, -106.6511367, "Albuquerque, NM, United States", 65.73],
+[61.2180556, -149.9002778, "Anchorage, AK, United States", 94.99],
+[52.1303794, -106.6605124, "Saskatoon, Canada", 81.02],
+[38.8799697, -77.1067698, "Arlington, VA, United States", 89.20],
+[47.0378741, -122.9006951, "Olympia, WA, United States", 79.25],
+[33.7490987, -84.3901849, "Atlanta, GA, United States", 74.97],
+[49.1044302, -122.801094, "Surrey, Canada", 67.37],
+[48.415802, -89.2673, "Thunder Bay, Canada", 81.98],
+[30.267153, -97.7430608, "Austin, TX, United States", 72.46],
+[43.6529206, -79.3849008, "Toronto, Canada", 75.22],
+[49.2827291, -123.1207375, "Vancouver, Canada", 75.59],
+[35.3732921, -119.0187125, "Bakersfield, CA, United States", 69.20],
+[39.2903848, -76.6121893, "Baltimore, MD, United States", 76.57],
+[48.4286111, -123.3655556, "Victoria, Canada", 75.47],
+[37.8708789, -122.2728247, "Berkeley, CA, United States", 87.82],
+[33.5206608, -86.80249, "Birmingham, AL, United States", 74.64],
+[42.3149367, -83.03636329999999, "Windsor, Canada", 72.00],
+[49.8997541, -97.1374937, "Winnipeg, Canada", 71.22],
+[43.6187102, -116.2146068, "Boise, ID, United States", 62.65],
+[42.35892, -71.05781, "Boston, MA, United States", 87.05],
+[42.8864468, -78.8783689, "Buffalo, NY, United States", 72.15],
+[37.2089572, -93.2922989, "Springfield, MO, United States", 66.40],
+[35.2270869, -80.8431267, "Charlotte, NC, United States", 75.35],
+[41.8781136, -87.6297982, "Chicago, IL, United States", 80.16],
+[39.1014537, -84.5124602, "Cincinnati, OH, United States", 69.13],
+[38.0317136, -84.4951359, "Lexington, KY, United States", 67.90],
+[41.49932, -81.6943605, "Cleveland, OH, United States", 73.47],
+[38.8338816, -104.8213634, "Colorado Springs, CO, United States", 75.42],
+[39.962208, -83.000676, "Columbus, OH, United States", 69.13],
+[32.7761963, -96.7968994, "Dallas, TX, United States", 65.94],
+[39.7391536, -104.9847034, "Denver, CO, United States", 77.31],
+[41.6005448, -93.6091064, "Des Moines, IA, United States", 69.37],
+[42.331427, -83.0457538, "Detroit, MI, United States", 70.20],
+[35.9940329, -78.898619, "Durham, NC, United States", 66.44],
+[26.1224386, -80.13731740000001, "Fort Lauderdale, FL, United States", 77.67],
+[41.079273, -85.1393513, "Fort Wayne, IN, United States", 69.42],
+[32.753177, -97.3327459, "Fort Worth, TX, United States", 67.81],
+[32.7765656, -79.9309216, "Charleston, SC, United States", 86.19],
+[36.7477272, -119.7723661, "Fresno, CA, United States", 72.36],
+[43.4655524, -80.5217786, "Waterloo, Canada", 72.86],
+[36.1626638, -86.7816016, "Nashville, TN, United States", 71.88],
+[40.5852602, -105.084423, "Fort Collins, CO, United States", 73.57],
+[42.9633599, -85.6680863, "Grand Rapids, MI, United States", 70.58],
+[36.0726354, -79.7919754, "Greensboro, NC, United States", 74.10],
+[21.3069444, -157.8583333, "Honolulu, HI, United States", 94.15],
+[29.7604267, -95.3698028, "Houston, TX, United States", 70.37],
+[39.7683765, -86.1580423, "Indianapolis, IN, United States", 74.72],
+[49.1658836, -123.9400647, "Nanaimo, BC, Canada", 71.90],
+[30.3321838, -81.655651, "Jacksonville, FL, United States", 73.58],
+[40.7281575, -74.0776417, "Jersey City, NJ, United States", 79.91],
+[39.0997265, -94.5785667, "Kansas City, MO, United States", 69.05],
+[36.1699412, -115.1398296, "Las Vegas, NV, United States", 70.97],
+[40.8000554, -96.6674005, "Lincoln, NE, United States", 68.61],
+[34.7464809, -92.2895948, "Little Rock, AR, United States", 71.29],
+[40.2737002, -76.8844179, "Harrisburg, PA, United States", 69.91],
+[33.8041667, -118.1580556, "Long Beach, CA, United States", 78.23],
+[45.6387281, -122.6614861, "Vancouver, WA, United States", 67.79],
+[34.0522342, -118.2436849, "Los Angeles, CA, United States", 82.30],
+[38.2542376, -85.759407, "Louisville, KY, United States", 65.14],
+[33.6720835, -101.858005715545, "Lubbock, TX, United States", 66.90],
+[43.0730517, -89.4012302, "Madison, WI, United States", 65.60],
+[35.1495343, -90.0489801, "Memphis, TN, United States", 72.95],
+[25.7742657, -80.1936589, "Miami, FL, United States", 86.01],
+[43.0389025, -87.9064736, "Milwaukee, WI, United States", 73.37],
+[44.9799654, -93.2638361, "Minneapolis, MN, United States", 81.46],
+[30.6943566, -88.0430541, "Mobile, AL, United States", 65.31],
+[40.0149856, -105.2705456, "Boulder, CO, United States", 82.19],
+[29.9499323, -90.0701156, "New Orleans, LA, United States", 76.64],
+[40.7127837, -74.0059413, "New York, NY, United States", 100.00],
+[26.7153424, -80.0533746, "West Palm Beach, FL, United States", 76.52],
+[40.735657, -74.1723667, "Newark, NJ, United States", 72.68],
+[36.8507689, -76.2858726, "Norfolk, VA, United States", 81.36],
+[37.8043637, -122.2711137, "Oakland, CA, United States", 85.11],
+[35.4675602, -97.5164276, "Oklahoma City, OK, United States", 64.29],
+[41.2523634, -95.99798829999999, "Omaha, NE, United States", 67.80],
+[28.5383355, -81.3792365, "Orlando, FL, United States", 76.63],
+[52.266741, -113.802295, "Red Deer, Canada", 76.15],
+[39.952335, -75.163789, "Philadelphia, PA, United States", 83.46],
+[33.4483771, -112.0740373, "Phoenix, AZ, United States", 66.87],
+[40.4406248, -79.9958864, "Pittsburgh, PA, United States", 78.66],
+[43.5499749, -96.700327, "Sioux Falls, SD, United States", 66.85],
+[33.0198431, -96.6988856, "Plano, TX, United States", 75.32],
+[45.5230622, -122.6764816, "Portland, OR, United States", 78.45],
+[35.7804015, -78.6390779, "Raleigh, NC, United States", 71.40],
+[34.7303688, -86.5861037, "Huntsville, AL, United States", 63.34],
+[38.4404674, -122.7144314, "Santa Rosa, CA, United States", 90.23],
+[39.5296329, -119.8138027, "Reno, NV, United States", 62.88],
+[37.542979, -77.469092, "Richmond, VA, United States", 70.98],
+[43.1572851, -77.6152141, "Rochester, NY, United States", 70.52],
+[38.5815719, -121.4943996, "Sacramento, CA, United States", 78.75],
+[38.6272733, -90.1978889, "Saint Louis, MO, United States", 70.76],
+[44.9541667, -93.1138889, "Saint Paul, MN, United States", 78.37],
+[27.7708606, -82.6792661, "Saint Petersburg, FL, United States", 73.29],
+[40.7607793, -111.8910474, "Salt Lake City, UT, United States", 66.76],
+[29.4241219, -98.4936282, "San Antonio, TX, United States", 60.92],
+[46.8032826, -71.242796, "Quebec City, Canada", 71.21],
+[32.715738, -117.1610838, "San Diego, CA, United States", 77.01],
+[37.775206, -122.419209, "San Francisco, CA, United States", 97.84],
+[37.3382082, -121.8863286, "San Jose, CA, United States", 82.87],
+[32.294816, -64.781375, "Hamilton, Bermuda", 145.43],
+[47.6038321, -122.3300624, "Seattle, WA, United States", 88.04],
+[32.5251516, -93.7501789, "Shreveport, LA, United States", 72.07],
+[47.6587802, -117.4260466, "Spokane, WA, United States", 69.26],
+[47.2528768, -122.4442906, "Tacoma, WA, United States", 82.54],
+[27.9475216, -82.4584279, "Tampa, FL, United States", 76.53],
+[41.7637111, -72.6850932, "Hartford, CT, United States", 80.86],
+[32.2217429, -110.926479, "Tucson, AZ, United States", 63.00],
+[36.1539816, -95.992775, "Tulsa, OK, United States", 66.71],
+[36.8529263, -75.977985, "Virginia Beach, VA, United States", 69.33],
+[38.9071923, -77.0368707, "Washington, DC, United States", 91.94],
+[37.68717609999999, -97.33005299999999, "Wichita, KS, United States", 67.02],
+[36.0998596, -80.244216, "Winston-Salem, NC, United States", 66.27],
+[32.735687, -97.1080656, "Arlington, TX, United States", 65.63],
+[33.955802, -83.3823656, "Athens, GA, United States", 60.55],
+[33.6839473, -117.7946942, "Irvine, CA, United States", 83.73],
+[42.2708716, -83.7263294, "Ann Arbor, MI, United States", 70.01],
+[34.0007104, -81.0348144, "Columbia, SC, United States", 69.70],
+[36.0694725, -94.2054387225566, "Fayetteville, AR, United States", 74.90],
+[40.6501038, -73.9495823, "Brooklyn, NY, United States", 93.79],
+[28.0836269, -80.6081089, "Melbourne, FL, United States", 77.09],
+[30.627977, -96.3344068, "College Station, TX, United States", 61.85],
+[30.421309, -87.2169149, "Pensacola, FL, United States", 64.88],
+[35.6009452, -82.554015, "Asheville, NC, United States", 77.36],
+[45.5016889, -73.567256, "Montreal, Canada", 69.18],
+[34.4208305, -119.6981901, "Santa Barbara, CA, United States", 79.17],
+[47.9673056, -122.2013998, "Everett, WA, United States", 77.63],
+[35.0456297, -85.3096801, "Chattanooga, TN, United States", 66.89],
+[47.6144219, -122.1923372, "Bellevue, WA, United States", 88.85],
+[35.9606384, -83.9207392, "Knoxville, TN, United States", 62.18]]);
+
+ var hrefs = [
+'https://www.numbeo.com/cost-of-living/in/Bellingham',
+'https://www.numbeo.com/cost-of-living/in/Manchester-NH',
+'https://www.numbeo.com/cost-of-living/in/Augusta',
+'https://www.numbeo.com/cost-of-living/in/Bloomington',
+'https://www.numbeo.com/cost-of-living/in/Eugene',
+'https://www.numbeo.com/cost-of-living/in/Rockville',
+'https://www.numbeo.com/cost-of-living/in/Portland-ME',
+'https://www.numbeo.com/cost-of-living/in/Albany',
+'https://www.numbeo.com/cost-of-living/in/Burlington',
+'https://www.numbeo.com/cost-of-living/in/Dayton',
+'https://www.numbeo.com/cost-of-living/in/Barrie',
+'https://www.numbeo.com/cost-of-living/in/Brampton',
+'https://www.numbeo.com/cost-of-living/in/Salem',
+'https://www.numbeo.com/cost-of-living/in/Burlington-Canada',
+'https://www.numbeo.com/cost-of-living/in/New-Haven',
+'https://www.numbeo.com/cost-of-living/in/Calgary',
+'https://www.numbeo.com/cost-of-living/in/Edmonton',
+'https://www.numbeo.com/cost-of-living/in/Syracuse',
+'https://www.numbeo.com/cost-of-living/in/Gatineau',
+'https://www.numbeo.com/cost-of-living/in/Guelph',
+'https://www.numbeo.com/cost-of-living/in/Queens',
+'https://www.numbeo.com/cost-of-living/in/Hamilton',
+'https://www.numbeo.com/cost-of-living/in/Greenville',
+'https://www.numbeo.com/cost-of-living/in/Halifax',
+'https://www.numbeo.com/cost-of-living/in/Kelowna',
+'https://www.numbeo.com/cost-of-living/in/Kitchener',
+'https://www.numbeo.com/cost-of-living/in/London-Canada',
+'https://www.numbeo.com/cost-of-living/in/Mississauga',
+'https://www.numbeo.com/cost-of-living/in/Moncton',
+'https://www.numbeo.com/cost-of-living/in/Ottawa',
+'https://www.numbeo.com/cost-of-living/in/Regina',
+'https://www.numbeo.com/cost-of-living/in/Akron',
+'https://www.numbeo.com/cost-of-living/in/Fort-Myers',
+'https://www.numbeo.com/cost-of-living/in/Albuquerque',
+'https://www.numbeo.com/cost-of-living/in/Anchorage',
+'https://www.numbeo.com/cost-of-living/in/Saskatoon',
+'https://www.numbeo.com/cost-of-living/in/Arlington',
+'https://www.numbeo.com/cost-of-living/in/Olympia',
+'https://www.numbeo.com/cost-of-living/in/Atlanta',
+'https://www.numbeo.com/cost-of-living/in/Surrey',
+'https://www.numbeo.com/cost-of-living/in/Thunder-Bay',
+'https://www.numbeo.com/cost-of-living/in/Austin',
+'https://www.numbeo.com/cost-of-living/in/Toronto',
+'https://www.numbeo.com/cost-of-living/in/Vancouver',
+'https://www.numbeo.com/cost-of-living/in/Bakersfield',
+'https://www.numbeo.com/cost-of-living/in/Baltimore',
+'https://www.numbeo.com/cost-of-living/in/Victoria',
+'https://www.numbeo.com/cost-of-living/in/Berkeley',
+'https://www.numbeo.com/cost-of-living/in/Birmingham-AL',
+'https://www.numbeo.com/cost-of-living/in/Windsor',
+'https://www.numbeo.com/cost-of-living/in/Winnipeg',
+'https://www.numbeo.com/cost-of-living/in/Boise',
+'https://www.numbeo.com/cost-of-living/in/Boston',
+'https://www.numbeo.com/cost-of-living/in/Buffalo',
+'https://www.numbeo.com/cost-of-living/in/Springfield',
+'https://www.numbeo.com/cost-of-living/in/Charlotte',
+'https://www.numbeo.com/cost-of-living/in/Chicago',
+'https://www.numbeo.com/cost-of-living/in/Cincinnati',
+'https://www.numbeo.com/cost-of-living/in/Lexington',
+'https://www.numbeo.com/cost-of-living/in/Cleveland',
+'https://www.numbeo.com/cost-of-living/in/Colorado-Springs',
+'https://www.numbeo.com/cost-of-living/in/Columbus',
+'https://www.numbeo.com/cost-of-living/in/Dallas',
+'https://www.numbeo.com/cost-of-living/in/Denver',
+'https://www.numbeo.com/cost-of-living/in/Des-Moines',
+'https://www.numbeo.com/cost-of-living/in/Detroit',
+'https://www.numbeo.com/cost-of-living/in/Durham',
+'https://www.numbeo.com/cost-of-living/in/Fort-Lauderdale',
+'https://www.numbeo.com/cost-of-living/in/Fort-Wayne',
+'https://www.numbeo.com/cost-of-living/in/Fort-Worth',
+'https://www.numbeo.com/cost-of-living/in/Charleston',
+'https://www.numbeo.com/cost-of-living/in/Fresno',
+'https://www.numbeo.com/cost-of-living/in/Waterloo',
+'https://www.numbeo.com/cost-of-living/in/Nashville',
+'https://www.numbeo.com/cost-of-living/in/Fort-Collins',
+'https://www.numbeo.com/cost-of-living/in/Grand-Rapids',
+'https://www.numbeo.com/cost-of-living/in/Greensboro',
+'https://www.numbeo.com/cost-of-living/in/Honolulu',
+'https://www.numbeo.com/cost-of-living/in/Houston',
+'https://www.numbeo.com/cost-of-living/in/Indianapolis',
+'https://www.numbeo.com/cost-of-living/in/Nanaimo',
+'https://www.numbeo.com/cost-of-living/in/Jacksonville',
+'https://www.numbeo.com/cost-of-living/in/Jersey-City',
+'https://www.numbeo.com/cost-of-living/in/Kansas-City',
+'https://www.numbeo.com/cost-of-living/in/Las-Vegas',
+'https://www.numbeo.com/cost-of-living/in/Lincoln',
+'https://www.numbeo.com/cost-of-living/in/Little-Rock',
+'https://www.numbeo.com/cost-of-living/in/Harrisburg',
+'https://www.numbeo.com/cost-of-living/in/Long-Beach',
+'https://www.numbeo.com/cost-of-living/in/Vancouver-WA',
+'https://www.numbeo.com/cost-of-living/in/Los-Angeles',
+'https://www.numbeo.com/cost-of-living/in/Louisville',
+'https://www.numbeo.com/cost-of-living/in/Lubbock',
+'https://www.numbeo.com/cost-of-living/in/Madison',
+'https://www.numbeo.com/cost-of-living/in/Memphis',
+'https://www.numbeo.com/cost-of-living/in/Miami',
+'https://www.numbeo.com/cost-of-living/in/Milwaukee',
+'https://www.numbeo.com/cost-of-living/in/Minneapolis',
+'https://www.numbeo.com/cost-of-living/in/Mobile',
+'https://www.numbeo.com/cost-of-living/in/Boulder',
+'https://www.numbeo.com/cost-of-living/in/New-Orleans',
+'https://www.numbeo.com/cost-of-living/in/New-York',
+'https://www.numbeo.com/cost-of-living/in/West-Palm-Beach',
+'https://www.numbeo.com/cost-of-living/in/Newark',
+'https://www.numbeo.com/cost-of-living/in/Norfolk',
+'https://www.numbeo.com/cost-of-living/in/Oakland',
+'https://www.numbeo.com/cost-of-living/in/Oklahoma-City',
+'https://www.numbeo.com/cost-of-living/in/Omaha',
+'https://www.numbeo.com/cost-of-living/in/Orlando',
+'https://www.numbeo.com/cost-of-living/in/Red-Deer',
+'https://www.numbeo.com/cost-of-living/in/Philadelphia',
+'https://www.numbeo.com/cost-of-living/in/Phoenix',
+'https://www.numbeo.com/cost-of-living/in/Pittsburgh',
+'https://www.numbeo.com/cost-of-living/in/Sioux-Falls',
+'https://www.numbeo.com/cost-of-living/in/Plano',
+'https://www.numbeo.com/cost-of-living/in/Portland',
+'https://www.numbeo.com/cost-of-living/in/Raleigh',
+'https://www.numbeo.com/cost-of-living/in/Huntsville',
+'https://www.numbeo.com/cost-of-living/in/Santa-Rosa',
+'https://www.numbeo.com/cost-of-living/in/Reno',
+'https://www.numbeo.com/cost-of-living/in/Richmond',
+'https://www.numbeo.com/cost-of-living/in/Rochester',
+'https://www.numbeo.com/cost-of-living/in/Sacramento',
+'https://www.numbeo.com/cost-of-living/in/Saint-Louis',
+'https://www.numbeo.com/cost-of-living/in/Saint-Paul',
+'https://www.numbeo.com/cost-of-living/in/Saint-Petersburg-FL',
+'https://www.numbeo.com/cost-of-living/in/Salt-Lake-City',
+'https://www.numbeo.com/cost-of-living/in/San-Antonio',
+'https://www.numbeo.com/cost-of-living/in/Quebec-City',
+'https://www.numbeo.com/cost-of-living/in/San-Diego',
+'https://www.numbeo.com/cost-of-living/in/San-Francisco',
+'https://www.numbeo.com/cost-of-living/in/San-Jose',
+'https://www.numbeo.com/cost-of-living/in/Hamilton-Bermuda',
+'https://www.numbeo.com/cost-of-living/in/Seattle',
+'https://www.numbeo.com/cost-of-living/in/Shreveport',
+'https://www.numbeo.com/cost-of-living/in/Spokane',
+'https://www.numbeo.com/cost-of-living/in/Tacoma',
+'https://www.numbeo.com/cost-of-living/in/Tampa',
+'https://www.numbeo.com/cost-of-living/in/Hartford',
+'https://www.numbeo.com/cost-of-living/in/Tucson',
+'https://www.numbeo.com/cost-of-living/in/Tulsa',
+'https://www.numbeo.com/cost-of-living/in/Virginia-Beach',
+'https://www.numbeo.com/cost-of-living/in/Washington',
+'https://www.numbeo.com/cost-of-living/in/Wichita',
+'https://www.numbeo.com/cost-of-living/in/Winston-salem',
+'https://www.numbeo.com/cost-of-living/in/Arlington-TX',
+'https://www.numbeo.com/cost-of-living/in/Athens-GA',
+'https://www.numbeo.com/cost-of-living/in/Irvine',
+'https://www.numbeo.com/cost-of-living/in/Ann-Arbor',
+'https://www.numbeo.com/cost-of-living/in/Columbia',
+'https://www.numbeo.com/cost-of-living/in/Fayetteville',
+'https://www.numbeo.com/cost-of-living/in/Brooklyn',
+'https://www.numbeo.com/cost-of-living/in/Melbourne-FL',
+'https://www.numbeo.com/cost-of-living/in/College-Station',
+'https://www.numbeo.com/cost-of-living/in/Pensacola',
+'https://www.numbeo.com/cost-of-living/in/Asheville',
+'https://www.numbeo.com/cost-of-living/in/Montreal',
+'https://www.numbeo.com/cost-of-living/in/Santa-Barbara',
+'https://www.numbeo.com/cost-of-living/in/Everett',
+'https://www.numbeo.com/cost-of-living/in/Chattanooga',
+'https://www.numbeo.com/cost-of-living/in/Bellevue',
+'https://www.numbeo.com/cost-of-living/in/Knoxville' ];
+
+  var options = {
+    region: '021',
+    backgroundColor: '#c4d7f3',
+    enableRegionInteractivity: true,
+    sizeAxis:  {minSize: 6,  maxSize: 6},
+    keepAspectRatio: false,
+    displayMode: 'markers',
+          colorAxis: {  minValue : 17 , maxValue : 92, colors: [ '#00FF00', '#FFFF00', '#FF0000'] }
+  };
+  var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+  google.visualization.events.addListener(chart, 'select', function() {
+      var selection = chart.getSelection();
+      var row = selection[0].row;
+      window.location = hrefs[row];
+  });
+  chart.draw(data, options);
+};
+</script>
+<div class="regionChartDivContainer">
+<div id="chart_div" class="regionChartDiv" ></div>
+<div class="regionChartDivLabel">
+Chart: Cost of Living Index</div>
+</div>
+
+
+      <table id="t2"  class="stripe row-border order-column compact" >
+<thead>
+	<tr>
+	<th><div style="font-size: 80%; vertical-align: middle;">Rank</div></th>
+		<th><div style="font-size: 95%;">City</div></th>
+		<th><div style="font-size: 90%;">Cost of Living Index</div></th>
+		<th><div style="font-size: 90%;">Rent Index</div></th>
+		<th><div style="font-size: 90%;">Cost of Living Plus Rent Index</div></th>
+		<th><div style="font-size: 90%;">Groceries Index</div></th>
+		<th><div style="font-size: 90%;">Restaurant Price Index</div></th>
+		<th><div style="font-size: 90%;">Local Purchasing Power Index</div></th>
+	</tr>
+</thead>
+<tbody>
+
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Hamilton, Bermuda</td>
+    <td style="text-align: right">145.43</td>
+    <td style="text-align: right">110.87</td>
+    <td style="text-align: right">128.76</td>
+    <td style="text-align: right">143.47</td>
+    <td style="text-align: right">158.75</td>
+    <td style="text-align: right">112.26</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">New York, NY, United States</td>
+    <td style="text-align: right">100.00</td>
+    <td style="text-align: right">100.00</td>
+    <td style="text-align: right">100.00</td>
+    <td style="text-align: right">100.00</td>
+    <td style="text-align: right">100.00</td>
+    <td style="text-align: right">100.00</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">San Francisco, CA, United States</td>
+    <td style="text-align: right">97.84</td>
+    <td style="text-align: right">115.36</td>
+    <td style="text-align: right">106.29</td>
+    <td style="text-align: right">107.52</td>
+    <td style="text-align: right">91.06</td>
+    <td style="text-align: right">92.96</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Anchorage, AK, United States</td>
+    <td style="text-align: right">94.99</td>
+    <td style="text-align: right">40.12</td>
+    <td style="text-align: right">68.53</td>
+    <td style="text-align: right">101.18</td>
+    <td style="text-align: right">84.55</td>
+    <td style="text-align: right">124.92</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Honolulu, HI, United States</td>
+    <td style="text-align: right">94.15</td>
+    <td style="text-align: right">62.82</td>
+    <td style="text-align: right">79.04</td>
+    <td style="text-align: right">104.69</td>
+    <td style="text-align: right">82.86</td>
+    <td style="text-align: right">103.08</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Brooklyn, NY, United States</td>
+    <td style="text-align: right">93.79</td>
+    <td style="text-align: right">76.24</td>
+    <td style="text-align: right">85.33</td>
+    <td style="text-align: right">92.73</td>
+    <td style="text-align: right">100.58</td>
+    <td style="text-align: right">87.04</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Rockville, MD, United States</td>
+    <td style="text-align: right">92.66</td>
+    <td style="text-align: right">64.00</td>
+    <td style="text-align: right">78.84</td>
+    <td style="text-align: right">87.76</td>
+    <td style="text-align: right">74.74</td>
+    <td style="text-align: right">130.79</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Bloomington, IN, United States</td>
+    <td style="text-align: right">92.14</td>
+    <td style="text-align: right">33.64</td>
+    <td style="text-align: right">63.93</td>
+    <td style="text-align: right">112.83</td>
+    <td style="text-align: right">75.43</td>
+    <td style="text-align: right">96.92</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Washington, DC, United States</td>
+    <td style="text-align: right">91.94</td>
+    <td style="text-align: right">73.30</td>
+    <td style="text-align: right">82.95</td>
+    <td style="text-align: right">92.74</td>
+    <td style="text-align: right">85.00</td>
+    <td style="text-align: right">120.62</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Santa Rosa, CA, United States</td>
+    <td style="text-align: right">90.23</td>
+    <td style="text-align: right">58.13</td>
+    <td style="text-align: right">74.75</td>
+    <td style="text-align: right">92.05</td>
+    <td style="text-align: right">78.34</td>
+    <td style="text-align: right">106.77</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Arlington, VA, United States</td>
+    <td style="text-align: right">89.20</td>
+    <td style="text-align: right">61.85</td>
+    <td style="text-align: right">76.01</td>
+    <td style="text-align: right">88.51</td>
+    <td style="text-align: right">82.63</td>
+    <td style="text-align: right">120.53</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Bellevue, WA, United States</td>
+    <td style="text-align: right">88.85</td>
+    <td style="text-align: right">66.67</td>
+    <td style="text-align: right">78.15</td>
+    <td style="text-align: right">88.43</td>
+    <td style="text-align: right">80.99</td>
+    <td style="text-align: right">73.46</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Seattle, WA, United States</td>
+    <td style="text-align: right">88.04</td>
+    <td style="text-align: right">64.41</td>
+    <td style="text-align: right">76.64</td>
+    <td style="text-align: right">89.85</td>
+    <td style="text-align: right">83.22</td>
+    <td style="text-align: right">144.60</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Berkeley, CA, United States</td>
+    <td style="text-align: right">87.82</td>
+    <td style="text-align: right">78.69</td>
+    <td style="text-align: right">83.42</td>
+    <td style="text-align: right">97.88</td>
+    <td style="text-align: right">78.29</td>
+    <td style="text-align: right">115.84</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Boston, MA, United States</td>
+    <td style="text-align: right">87.05</td>
+    <td style="text-align: right">78.72</td>
+    <td style="text-align: right">83.03</td>
+    <td style="text-align: right">88.99</td>
+    <td style="text-align: right">86.20</td>
+    <td style="text-align: right">101.35</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Charleston, SC, United States</td>
+    <td style="text-align: right">86.19</td>
+    <td style="text-align: right">45.99</td>
+    <td style="text-align: right">66.80</td>
+    <td style="text-align: right">98.41</td>
+    <td style="text-align: right">71.87</td>
+    <td style="text-align: right">115.41</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Miami, FL, United States</td>
+    <td style="text-align: right">86.01</td>
+    <td style="text-align: right">63.20</td>
+    <td style="text-align: right">75.01</td>
+    <td style="text-align: right">87.37</td>
+    <td style="text-align: right">95.81</td>
+    <td style="text-align: right">97.81</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Oakland, CA, United States</td>
+    <td style="text-align: right">85.11</td>
+    <td style="text-align: right">79.57</td>
+    <td style="text-align: right">82.44</td>
+    <td style="text-align: right">88.65</td>
+    <td style="text-align: right">81.38</td>
+    <td style="text-align: right">97.94</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">New Haven, CT, United States</td>
+    <td style="text-align: right">84.13</td>
+    <td style="text-align: right">47.53</td>
+    <td style="text-align: right">66.48</td>
+    <td style="text-align: right">92.86</td>
+    <td style="text-align: right">86.18</td>
+    <td style="text-align: right">127.41</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Irvine, CA, United States</td>
+    <td style="text-align: right">83.73</td>
+    <td style="text-align: right">66.26</td>
+    <td style="text-align: right">75.30</td>
+    <td style="text-align: right">89.49</td>
+    <td style="text-align: right">76.50</td>
+    <td style="text-align: right">139.48</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Philadelphia, PA, United States</td>
+    <td style="text-align: right">83.46</td>
+    <td style="text-align: right">48.09</td>
+    <td style="text-align: right">66.40</td>
+    <td style="text-align: right">82.24</td>
+    <td style="text-align: right">79.37</td>
+    <td style="text-align: right">116.06</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">San Jose, CA, United States</td>
+    <td style="text-align: right">82.87</td>
+    <td style="text-align: right">81.81</td>
+    <td style="text-align: right">82.36</td>
+    <td style="text-align: right">85.40</td>
+    <td style="text-align: right">83.12</td>
+    <td style="text-align: right">134.82</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Tacoma, WA, United States</td>
+    <td style="text-align: right">82.54</td>
+    <td style="text-align: right">36.82</td>
+    <td style="text-align: right">60.49</td>
+    <td style="text-align: right">88.02</td>
+    <td style="text-align: right">72.46</td>
+    <td style="text-align: right">125.10</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Los Angeles, CA, United States</td>
+    <td style="text-align: right">82.30</td>
+    <td style="text-align: right">68.75</td>
+    <td style="text-align: right">75.77</td>
+    <td style="text-align: right">82.73</td>
+    <td style="text-align: right">82.48</td>
+    <td style="text-align: right">109.01</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Boulder, CO, United States</td>
+    <td style="text-align: right">82.19</td>
+    <td style="text-align: right">53.80</td>
+    <td style="text-align: right">68.50</td>
+    <td style="text-align: right">86.22</td>
+    <td style="text-align: right">74.92</td>
+    <td style="text-align: right">143.02</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Halifax, Canada</td>
+    <td style="text-align: right">82.03</td>
+    <td style="text-align: right">29.33</td>
+    <td style="text-align: right">56.61</td>
+    <td style="text-align: right">88.57</td>
+    <td style="text-align: right">75.91</td>
+    <td style="text-align: right">95.70</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Thunder Bay, Canada</td>
+    <td style="text-align: right">81.98</td>
+    <td style="text-align: right">26.20</td>
+    <td style="text-align: right">55.08</td>
+    <td style="text-align: right">77.76</td>
+    <td style="text-align: right">74.63</td>
+    <td style="text-align: right">84.87</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Portland, ME, United States</td>
+    <td style="text-align: right">81.60</td>
+    <td style="text-align: right">40.73</td>
+    <td style="text-align: right">61.89</td>
+    <td style="text-align: right">86.96</td>
+    <td style="text-align: right">88.58</td>
+    <td style="text-align: right">113.69</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Minneapolis, MN, United States</td>
+    <td style="text-align: right">81.46</td>
+    <td style="text-align: right">45.65</td>
+    <td style="text-align: right">64.19</td>
+    <td style="text-align: right">87.48</td>
+    <td style="text-align: right">75.88</td>
+    <td style="text-align: right">131.08</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Norfolk, VA, United States</td>
+    <td style="text-align: right">81.36</td>
+    <td style="text-align: right">43.59</td>
+    <td style="text-align: right">63.14</td>
+    <td style="text-align: right">90.06</td>
+    <td style="text-align: right">81.31</td>
+    <td style="text-align: right">64.42</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Saskatoon, Canada</td>
+    <td style="text-align: right">81.02</td>
+    <td style="text-align: right">29.70</td>
+    <td style="text-align: right">56.27</td>
+    <td style="text-align: right">82.39</td>
+    <td style="text-align: right">72.78</td>
+    <td style="text-align: right">99.63</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Hartford, CT, United States</td>
+    <td style="text-align: right">80.86</td>
+    <td style="text-align: right">42.15</td>
+    <td style="text-align: right">62.19</td>
+    <td style="text-align: right">78.41</td>
+    <td style="text-align: right">86.26</td>
+    <td style="text-align: right">101.57</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Queens, NY, United States</td>
+    <td style="text-align: right">80.77</td>
+    <td style="text-align: right">64.73</td>
+    <td style="text-align: right">73.04</td>
+    <td style="text-align: right">74.39</td>
+    <td style="text-align: right">87.27</td>
+    <td style="text-align: right">113.40</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Albany, NY, United States</td>
+    <td style="text-align: right">80.19</td>
+    <td style="text-align: right">30.82</td>
+    <td style="text-align: right">56.38</td>
+    <td style="text-align: right">83.35</td>
+    <td style="text-align: right">71.86</td>
+    <td style="text-align: right">139.34</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Chicago, IL, United States</td>
+    <td style="text-align: right">80.16</td>
+    <td style="text-align: right">56.71</td>
+    <td style="text-align: right">68.85</td>
+    <td style="text-align: right">79.14</td>
+    <td style="text-align: right">77.99</td>
+    <td style="text-align: right">119.17</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Jersey City, NJ, United States</td>
+    <td style="text-align: right">79.91</td>
+    <td style="text-align: right">66.00</td>
+    <td style="text-align: right">73.20</td>
+    <td style="text-align: right">79.50</td>
+    <td style="text-align: right">85.95</td>
+    <td style="text-align: right">130.99</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Olympia, WA, United States</td>
+    <td style="text-align: right">79.25</td>
+    <td style="text-align: right">36.06</td>
+    <td style="text-align: right">58.42</td>
+    <td style="text-align: right">77.18</td>
+    <td style="text-align: right">78.70</td>
+    <td style="text-align: right">125.04</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Barrie, Canada</td>
+    <td style="text-align: right">79.18</td>
+    <td style="text-align: right">28.03</td>
+    <td style="text-align: right">54.51</td>
+    <td style="text-align: right">79.85</td>
+    <td style="text-align: right">76.95</td>
+    <td style="text-align: right">127.57</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Santa Barbara, CA, United States</td>
+    <td style="text-align: right">79.17</td>
+    <td style="text-align: right">71.45</td>
+    <td style="text-align: right">75.45</td>
+    <td style="text-align: right">76.47</td>
+    <td style="text-align: right">87.43</td>
+    <td style="text-align: right">134.38</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Eugene, OR, United States</td>
+    <td style="text-align: right">78.94</td>
+    <td style="text-align: right">31.38</td>
+    <td style="text-align: right">56.00</td>
+    <td style="text-align: right">91.86</td>
+    <td style="text-align: right">69.07</td>
+    <td style="text-align: right">109.06</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Burlington, VT, United States</td>
+    <td style="text-align: right">78.89</td>
+    <td style="text-align: right">41.89</td>
+    <td style="text-align: right">61.05</td>
+    <td style="text-align: right">82.04</td>
+    <td style="text-align: right">79.41</td>
+    <td style="text-align: right">101.19</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Sacramento, CA, United States</td>
+    <td style="text-align: right">78.75</td>
+    <td style="text-align: right">43.34</td>
+    <td style="text-align: right">61.67</td>
+    <td style="text-align: right">80.02</td>
+    <td style="text-align: right">74.20</td>
+    <td style="text-align: right">135.14</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Pittsburgh, PA, United States</td>
+    <td style="text-align: right">78.66</td>
+    <td style="text-align: right">39.02</td>
+    <td style="text-align: right">59.54</td>
+    <td style="text-align: right">76.56</td>
+    <td style="text-align: right">70.89</td>
+    <td style="text-align: right">133.38</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Portland, OR, United States</td>
+    <td style="text-align: right">78.45</td>
+    <td style="text-align: right">51.72</td>
+    <td style="text-align: right">65.56</td>
+    <td style="text-align: right">79.56</td>
+    <td style="text-align: right">68.40</td>
+    <td style="text-align: right">125.57</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Saint Paul, MN, United States</td>
+    <td style="text-align: right">78.37</td>
+    <td style="text-align: right">40.38</td>
+    <td style="text-align: right">60.05</td>
+    <td style="text-align: right">81.15</td>
+    <td style="text-align: right">74.68</td>
+    <td style="text-align: right">97.64</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Long Beach, CA, United States</td>
+    <td style="text-align: right">78.23</td>
+    <td style="text-align: right">54.98</td>
+    <td style="text-align: right">67.01</td>
+    <td style="text-align: right">82.77</td>
+    <td style="text-align: right">76.98</td>
+    <td style="text-align: right">127.25</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Brampton, Canada</td>
+    <td style="text-align: right">77.90</td>
+    <td style="text-align: right">29.01</td>
+    <td style="text-align: right">54.32</td>
+    <td style="text-align: right">83.61</td>
+    <td style="text-align: right">64.25</td>
+    <td style="text-align: right">103.74</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Fort Lauderdale, FL, United States</td>
+    <td style="text-align: right">77.67</td>
+    <td style="text-align: right">51.63</td>
+    <td style="text-align: right">65.11</td>
+    <td style="text-align: right">79.05</td>
+    <td style="text-align: right">77.85</td>
+    <td style="text-align: right">104.35</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Everett, WA, United States</td>
+    <td style="text-align: right">77.63</td>
+    <td style="text-align: right">42.48</td>
+    <td style="text-align: right">60.68</td>
+    <td style="text-align: right">84.84</td>
+    <td style="text-align: right">70.29</td>
+    <td style="text-align: right">113.75</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Asheville, NC, United States</td>
+    <td style="text-align: right">77.36</td>
+    <td style="text-align: right">37.85</td>
+    <td style="text-align: right">58.31</td>
+    <td style="text-align: right">84.94</td>
+    <td style="text-align: right">72.18</td>
+    <td style="text-align: right">111.73</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Denver, CO, United States</td>
+    <td style="text-align: right">77.31</td>
+    <td style="text-align: right">54.00</td>
+    <td style="text-align: right">66.07</td>
+    <td style="text-align: right">77.48</td>
+    <td style="text-align: right">79.43</td>
+    <td style="text-align: right">130.10</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Bellingham, WA, United States</td>
+    <td style="text-align: right">77.13</td>
+    <td style="text-align: right">34.70</td>
+    <td style="text-align: right">56.67</td>
+    <td style="text-align: right">79.09</td>
+    <td style="text-align: right">77.88</td>
+    <td style="text-align: right">131.14</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Melbourne, FL, United States</td>
+    <td style="text-align: right">77.09</td>
+    <td style="text-align: right">29.38</td>
+    <td style="text-align: right">54.08</td>
+    <td style="text-align: right">85.53</td>
+    <td style="text-align: right">77.04</td>
+    <td style="text-align: right">128.34</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">San Diego, CA, United States</td>
+    <td style="text-align: right">77.01</td>
+    <td style="text-align: right">61.91</td>
+    <td style="text-align: right">69.73</td>
+    <td style="text-align: right">75.09</td>
+    <td style="text-align: right">82.09</td>
+    <td style="text-align: right">142.72</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">New Orleans, LA, United States</td>
+    <td style="text-align: right">76.64</td>
+    <td style="text-align: right">40.21</td>
+    <td style="text-align: right">59.07</td>
+    <td style="text-align: right">75.15</td>
+    <td style="text-align: right">84.00</td>
+    <td style="text-align: right">116.56</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Orlando, FL, United States</td>
+    <td style="text-align: right">76.63</td>
+    <td style="text-align: right">37.35</td>
+    <td style="text-align: right">57.68</td>
+    <td style="text-align: right">82.77</td>
+    <td style="text-align: right">69.38</td>
+    <td style="text-align: right">129.02</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Baltimore, MD, United States</td>
+    <td style="text-align: right">76.57</td>
+    <td style="text-align: right">45.03</td>
+    <td style="text-align: right">61.36</td>
+    <td style="text-align: right">73.92</td>
+    <td style="text-align: right">80.16</td>
+    <td style="text-align: right">116.79</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Tampa, FL, United States</td>
+    <td style="text-align: right">76.53</td>
+    <td style="text-align: right">42.09</td>
+    <td style="text-align: right">59.92</td>
+    <td style="text-align: right">80.64</td>
+    <td style="text-align: right">80.21</td>
+    <td style="text-align: right">144.43</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">West Palm Beach, FL, United States</td>
+    <td style="text-align: right">76.52</td>
+    <td style="text-align: right">43.11</td>
+    <td style="text-align: right">60.41</td>
+    <td style="text-align: right">79.59</td>
+    <td style="text-align: right">78.92</td>
+    <td style="text-align: right">124.36</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Calgary, Canada</td>
+    <td style="text-align: right">76.44</td>
+    <td style="text-align: right">31.37</td>
+    <td style="text-align: right">54.70</td>
+    <td style="text-align: right">72.97</td>
+    <td style="text-align: right">75.23</td>
+    <td style="text-align: right">146.39</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Red Deer, Canada</td>
+    <td style="text-align: right">76.15</td>
+    <td style="text-align: right">25.51</td>
+    <td style="text-align: right">51.73</td>
+    <td style="text-align: right">69.85</td>
+    <td style="text-align: right">74.21</td>
+    <td style="text-align: right">136.55</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Edmonton, Canada</td>
+    <td style="text-align: right">76.01</td>
+    <td style="text-align: right">31.61</td>
+    <td style="text-align: right">54.60</td>
+    <td style="text-align: right">74.26</td>
+    <td style="text-align: right">73.66</td>
+    <td style="text-align: right">131.93</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Vancouver, Canada</td>
+    <td style="text-align: right">75.59</td>
+    <td style="text-align: right">53.50</td>
+    <td style="text-align: right">64.94</td>
+    <td style="text-align: right">78.26</td>
+    <td style="text-align: right">70.12</td>
+    <td style="text-align: right">96.77</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Victoria, Canada</td>
+    <td style="text-align: right">75.47</td>
+    <td style="text-align: right">40.00</td>
+    <td style="text-align: right">58.36</td>
+    <td style="text-align: right">79.13</td>
+    <td style="text-align: right">70.56</td>
+    <td style="text-align: right">112.52</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Colorado Springs, CO, United States</td>
+    <td style="text-align: right">75.42</td>
+    <td style="text-align: right">31.21</td>
+    <td style="text-align: right">54.10</td>
+    <td style="text-align: right">72.93</td>
+    <td style="text-align: right">76.48</td>
+    <td style="text-align: right">150.89</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Charlotte, NC, United States</td>
+    <td style="text-align: right">75.35</td>
+    <td style="text-align: right">40.62</td>
+    <td style="text-align: right">58.60</td>
+    <td style="text-align: right">79.40</td>
+    <td style="text-align: right">73.87</td>
+    <td style="text-align: right">112.72</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Plano, TX, United States</td>
+    <td style="text-align: right">75.32</td>
+    <td style="text-align: right">40.02</td>
+    <td style="text-align: right">58.30</td>
+    <td style="text-align: right">73.93</td>
+    <td style="text-align: right">63.49</td>
+    <td style="text-align: right">101.69</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Toronto, Canada</td>
+    <td style="text-align: right">75.22</td>
+    <td style="text-align: right">46.94</td>
+    <td style="text-align: right">61.58</td>
+    <td style="text-align: right">70.65</td>
+    <td style="text-align: right">71.58</td>
+    <td style="text-align: right">106.83</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Atlanta, GA, United States</td>
+    <td style="text-align: right">74.97</td>
+    <td style="text-align: right">45.83</td>
+    <td style="text-align: right">60.92</td>
+    <td style="text-align: right">75.00</td>
+    <td style="text-align: right">74.81</td>
+    <td style="text-align: right">153.77</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Fayetteville, AR, United States</td>
+    <td style="text-align: right">74.90</td>
+    <td style="text-align: right">24.85</td>
+    <td style="text-align: right">50.76</td>
+    <td style="text-align: right">81.39</td>
+    <td style="text-align: right">69.15</td>
+    <td style="text-align: right">104.92</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Kelowna, Canada</td>
+    <td style="text-align: right">74.78</td>
+    <td style="text-align: right">34.84</td>
+    <td style="text-align: right">55.52</td>
+    <td style="text-align: right">77.54</td>
+    <td style="text-align: right">68.90</td>
+    <td style="text-align: right">109.75</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Indianapolis, IN, United States</td>
+    <td style="text-align: right">74.72</td>
+    <td style="text-align: right">35.67</td>
+    <td style="text-align: right">55.89</td>
+    <td style="text-align: right">73.92</td>
+    <td style="text-align: right">74.26</td>
+    <td style="text-align: right">94.22</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Birmingham, AL, United States</td>
+    <td style="text-align: right">74.64</td>
+    <td style="text-align: right">31.36</td>
+    <td style="text-align: right">53.77</td>
+    <td style="text-align: right">76.12</td>
+    <td style="text-align: right">74.13</td>
+    <td style="text-align: right">134.55</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Burlington, Canada</td>
+    <td style="text-align: right">74.32</td>
+    <td style="text-align: right">34.20</td>
+    <td style="text-align: right">54.97</td>
+    <td style="text-align: right">68.68</td>
+    <td style="text-align: right">82.63</td>
+    <td style="text-align: right">137.47</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Augusta, GA, United States</td>
+    <td style="text-align: right">74.29</td>
+    <td style="text-align: right">22.45</td>
+    <td style="text-align: right">49.29</td>
+    <td style="text-align: right">82.42</td>
+    <td style="text-align: right">62.66</td>
+    <td style="text-align: right">100.38</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Greensboro, NC, United States</td>
+    <td style="text-align: right">74.10</td>
+    <td style="text-align: right">26.05</td>
+    <td style="text-align: right">50.93</td>
+    <td style="text-align: right">80.28</td>
+    <td style="text-align: right">62.04</td>
+    <td style="text-align: right">141.87</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Greenville, SC, United States</td>
+    <td style="text-align: right">74.08</td>
+    <td style="text-align: right">36.03</td>
+    <td style="text-align: right">55.73</td>
+    <td style="text-align: right">83.74</td>
+    <td style="text-align: right">67.18</td>
+    <td style="text-align: right">127.49</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Jacksonville, FL, United States</td>
+    <td style="text-align: right">73.58</td>
+    <td style="text-align: right">32.27</td>
+    <td style="text-align: right">53.66</td>
+    <td style="text-align: right">77.14</td>
+    <td style="text-align: right">73.25</td>
+    <td style="text-align: right">117.13</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Fort Collins, CO, United States</td>
+    <td style="text-align: right">73.57</td>
+    <td style="text-align: right">42.07</td>
+    <td style="text-align: right">58.38</td>
+    <td style="text-align: right">81.45</td>
+    <td style="text-align: right">61.31</td>
+    <td style="text-align: right">73.23</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Cleveland, OH, United States</td>
+    <td style="text-align: right">73.47</td>
+    <td style="text-align: right">28.35</td>
+    <td style="text-align: right">51.71</td>
+    <td style="text-align: right">67.52</td>
+    <td style="text-align: right">74.70</td>
+    <td style="text-align: right">146.27</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Milwaukee, WI, United States</td>
+    <td style="text-align: right">73.37</td>
+    <td style="text-align: right">35.50</td>
+    <td style="text-align: right">55.11</td>
+    <td style="text-align: right">71.90</td>
+    <td style="text-align: right">71.59</td>
+    <td style="text-align: right">139.23</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Saint Petersburg, FL, United States</td>
+    <td style="text-align: right">73.29</td>
+    <td style="text-align: right">41.01</td>
+    <td style="text-align: right">57.72</td>
+    <td style="text-align: right">72.82</td>
+    <td style="text-align: right">75.33</td>
+    <td style="text-align: right">145.31</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Memphis, TN, United States</td>
+    <td style="text-align: right">72.95</td>
+    <td style="text-align: right">27.52</td>
+    <td style="text-align: right">51.04</td>
+    <td style="text-align: right">73.96</td>
+    <td style="text-align: right">70.71</td>
+    <td style="text-align: right">154.91</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Guelph, Canada</td>
+    <td style="text-align: right">72.93</td>
+    <td style="text-align: right">28.86</td>
+    <td style="text-align: right">51.68</td>
+    <td style="text-align: right">68.86</td>
+    <td style="text-align: right">80.08</td>
+    <td style="text-align: right">114.41</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Syracuse, NY, United States</td>
+    <td style="text-align: right">72.88</td>
+    <td style="text-align: right">30.77</td>
+    <td style="text-align: right">52.57</td>
+    <td style="text-align: right">72.26</td>
+    <td style="text-align: right">67.76</td>
+    <td style="text-align: right">103.63</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Waterloo, Canada</td>
+    <td style="text-align: right">72.86</td>
+    <td style="text-align: right">29.64</td>
+    <td style="text-align: right">52.01</td>
+    <td style="text-align: right">70.36</td>
+    <td style="text-align: right">70.20</td>
+    <td style="text-align: right">120.38</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Regina, Canada</td>
+    <td style="text-align: right">72.85</td>
+    <td style="text-align: right">28.93</td>
+    <td style="text-align: right">51.67</td>
+    <td style="text-align: right">73.25</td>
+    <td style="text-align: right">66.30</td>
+    <td style="text-align: right">109.12</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Newark, NJ, United States</td>
+    <td style="text-align: right">72.68</td>
+    <td style="text-align: right">40.31</td>
+    <td style="text-align: right">57.07</td>
+    <td style="text-align: right">66.47</td>
+    <td style="text-align: right">77.87</td>
+    <td style="text-align: right">94.10</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Akron, OH, United States</td>
+    <td style="text-align: right">72.65</td>
+    <td style="text-align: right">21.57</td>
+    <td style="text-align: right">48.02</td>
+    <td style="text-align: right">77.33</td>
+    <td style="text-align: right">63.79</td>
+    <td style="text-align: right">99.21</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Mississauga, Canada</td>
+    <td style="text-align: right">72.54</td>
+    <td style="text-align: right">36.65</td>
+    <td style="text-align: right">55.23</td>
+    <td style="text-align: right">68.46</td>
+    <td style="text-align: right">67.15</td>
+    <td style="text-align: right">106.67</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Austin, TX, United States</td>
+    <td style="text-align: right">72.46</td>
+    <td style="text-align: right">49.80</td>
+    <td style="text-align: right">61.53</td>
+    <td style="text-align: right">73.02</td>
+    <td style="text-align: right">75.56</td>
+    <td style="text-align: right">140.39</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Fresno, CA, United States</td>
+    <td style="text-align: right">72.36</td>
+    <td style="text-align: right">30.94</td>
+    <td style="text-align: right">52.38</td>
+    <td style="text-align: right">72.51</td>
+    <td style="text-align: right">75.89</td>
+    <td style="text-align: right">110.71</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Buffalo, NY, United States</td>
+    <td style="text-align: right">72.15</td>
+    <td style="text-align: right">28.94</td>
+    <td style="text-align: right">51.31</td>
+    <td style="text-align: right">69.14</td>
+    <td style="text-align: right">72.72</td>
+    <td style="text-align: right">120.23</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Shreveport, LA, United States</td>
+    <td style="text-align: right">72.07</td>
+    <td style="text-align: right">25.24</td>
+    <td style="text-align: right">49.48</td>
+    <td style="text-align: right">78.42</td>
+    <td style="text-align: right">64.04</td>
+    <td style="text-align: right">76.03</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Windsor, Canada</td>
+    <td style="text-align: right">72.00</td>
+    <td style="text-align: right">21.38</td>
+    <td style="text-align: right">47.59</td>
+    <td style="text-align: right">63.40</td>
+    <td style="text-align: right">67.16</td>
+    <td style="text-align: right">118.85</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Nanaimo, BC, Canada</td>
+    <td style="text-align: right">71.90</td>
+    <td style="text-align: right">25.11</td>
+    <td style="text-align: right">49.33</td>
+    <td style="text-align: right">78.03</td>
+    <td style="text-align: right">63.87</td>
+    <td style="text-align: right">99.07</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Nashville, TN, United States</td>
+    <td style="text-align: right">71.88</td>
+    <td style="text-align: right">47.73</td>
+    <td style="text-align: right">60.23</td>
+    <td style="text-align: right">74.28</td>
+    <td style="text-align: right">69.38</td>
+    <td style="text-align: right">125.40</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Moncton, Canada</td>
+    <td style="text-align: right">71.79</td>
+    <td style="text-align: right">18.63</td>
+    <td style="text-align: right">46.15</td>
+    <td style="text-align: right">70.92</td>
+    <td style="text-align: right">66.98</td>
+    <td style="text-align: right">88.06</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Manchester, NH, United States</td>
+    <td style="text-align: right">71.46</td>
+    <td style="text-align: right">33.61</td>
+    <td style="text-align: right">53.20</td>
+    <td style="text-align: right">76.26</td>
+    <td style="text-align: right">72.86</td>
+    <td style="text-align: right">124.75</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Raleigh, NC, United States</td>
+    <td style="text-align: right">71.40</td>
+    <td style="text-align: right">37.42</td>
+    <td style="text-align: right">55.02</td>
+    <td style="text-align: right">78.32</td>
+    <td style="text-align: right">70.58</td>
+    <td style="text-align: right">131.99</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Little Rock, AR, United States</td>
+    <td style="text-align: right">71.29</td>
+    <td style="text-align: right">24.83</td>
+    <td style="text-align: right">48.89</td>
+    <td style="text-align: right">77.24</td>
+    <td style="text-align: right">64.98</td>
+    <td style="text-align: right">132.31</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Winnipeg, Canada</td>
+    <td style="text-align: right">71.22</td>
+    <td style="text-align: right">24.91</td>
+    <td style="text-align: right">48.89</td>
+    <td style="text-align: right">69.49</td>
+    <td style="text-align: right">67.33</td>
+    <td style="text-align: right">114.61</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Quebec City, Canada</td>
+    <td style="text-align: right">71.21</td>
+    <td style="text-align: right">17.97</td>
+    <td style="text-align: right">45.53</td>
+    <td style="text-align: right">71.69</td>
+    <td style="text-align: right">65.29</td>
+    <td style="text-align: right">118.31</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Richmond, VA, United States</td>
+    <td style="text-align: right">70.98</td>
+    <td style="text-align: right">36.18</td>
+    <td style="text-align: right">54.20</td>
+    <td style="text-align: right">77.66</td>
+    <td style="text-align: right">65.74</td>
+    <td style="text-align: right">133.08</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Las Vegas, NV, United States</td>
+    <td style="text-align: right">70.97</td>
+    <td style="text-align: right">29.98</td>
+    <td style="text-align: right">51.20</td>
+    <td style="text-align: right">66.54</td>
+    <td style="text-align: right">74.53</td>
+    <td style="text-align: right">148.81</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Saint Louis, MO, United States</td>
+    <td style="text-align: right">70.76</td>
+    <td style="text-align: right">30.11</td>
+    <td style="text-align: right">51.15</td>
+    <td style="text-align: right">71.33</td>
+    <td style="text-align: right">68.14</td>
+    <td style="text-align: right">144.70</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Grand Rapids, MI, United States</td>
+    <td style="text-align: right">70.58</td>
+    <td style="text-align: right">32.95</td>
+    <td style="text-align: right">52.43</td>
+    <td style="text-align: right">69.69</td>
+    <td style="text-align: right">70.77</td>
+    <td style="text-align: right">143.87</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Rochester, NY, United States</td>
+    <td style="text-align: right">70.52</td>
+    <td style="text-align: right">30.31</td>
+    <td style="text-align: right">51.13</td>
+    <td style="text-align: right">72.96</td>
+    <td style="text-align: right">74.66</td>
+    <td style="text-align: right">158.71</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Houston, TX, United States</td>
+    <td style="text-align: right">70.37</td>
+    <td style="text-align: right">44.10</td>
+    <td style="text-align: right">57.70</td>
+    <td style="text-align: right">71.01</td>
+    <td style="text-align: right">71.15</td>
+    <td style="text-align: right">145.38</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Detroit, MI, United States</td>
+    <td style="text-align: right">70.20</td>
+    <td style="text-align: right">35.48</td>
+    <td style="text-align: right">53.45</td>
+    <td style="text-align: right">67.02</td>
+    <td style="text-align: right">59.30</td>
+    <td style="text-align: right">131.62</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Ann Arbor, MI, United States</td>
+    <td style="text-align: right">70.01</td>
+    <td style="text-align: right">45.26</td>
+    <td style="text-align: right">58.07</td>
+    <td style="text-align: right">69.31</td>
+    <td style="text-align: right">62.97</td>
+    <td style="text-align: right">163.57</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Ottawa, Canada</td>
+    <td style="text-align: right">69.91</td>
+    <td style="text-align: right">31.76</td>
+    <td style="text-align: right">51.51</td>
+    <td style="text-align: right">64.16</td>
+    <td style="text-align: right">71.95</td>
+    <td style="text-align: right">145.32</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Harrisburg, PA, United States</td>
+    <td style="text-align: right">69.91</td>
+    <td style="text-align: right">27.78</td>
+    <td style="text-align: right">49.59</td>
+    <td style="text-align: right">72.58</td>
+    <td style="text-align: right">66.41</td>
+    <td style="text-align: right">140.56</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Salem, OR, United States</td>
+    <td style="text-align: right">69.81</td>
+    <td style="text-align: right">32.00</td>
+    <td style="text-align: right">51.58</td>
+    <td style="text-align: right">70.61</td>
+    <td style="text-align: right">68.39</td>
+    <td style="text-align: right">106.58</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Dayton, OH, United States</td>
+    <td style="text-align: right">69.76</td>
+    <td style="text-align: right">21.96</td>
+    <td style="text-align: right">46.71</td>
+    <td style="text-align: right">73.53</td>
+    <td style="text-align: right">62.38</td>
+    <td style="text-align: right">114.20</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Columbia, SC, United States</td>
+    <td style="text-align: right">69.70</td>
+    <td style="text-align: right">29.48</td>
+    <td style="text-align: right">50.30</td>
+    <td style="text-align: right">75.37</td>
+    <td style="text-align: right">65.65</td>
+    <td style="text-align: right">92.47</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Fort Wayne, IN, United States</td>
+    <td style="text-align: right">69.42</td>
+    <td style="text-align: right">21.43</td>
+    <td style="text-align: right">46.28</td>
+    <td style="text-align: right">74.49</td>
+    <td style="text-align: right">69.24</td>
+    <td style="text-align: right">129.87</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">London, Canada</td>
+    <td style="text-align: right">69.39</td>
+    <td style="text-align: right">24.58</td>
+    <td style="text-align: right">47.78</td>
+    <td style="text-align: right">65.97</td>
+    <td style="text-align: right">66.17</td>
+    <td style="text-align: right">105.79</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Des Moines, IA, United States</td>
+    <td style="text-align: right">69.37</td>
+    <td style="text-align: right">31.23</td>
+    <td style="text-align: right">50.97</td>
+    <td style="text-align: right">73.45</td>
+    <td style="text-align: right">63.64</td>
+    <td style="text-align: right">125.85</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Virginia Beach, VA, United States</td>
+    <td style="text-align: right">69.33</td>
+    <td style="text-align: right">37.42</td>
+    <td style="text-align: right">53.94</td>
+    <td style="text-align: right">68.92</td>
+    <td style="text-align: right">71.08</td>
+    <td style="text-align: right">151.73</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Spokane, WA, United States</td>
+    <td style="text-align: right">69.26</td>
+    <td style="text-align: right">26.97</td>
+    <td style="text-align: right">48.86</td>
+    <td style="text-align: right">70.06</td>
+    <td style="text-align: right">64.46</td>
+    <td style="text-align: right">135.55</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Bakersfield, CA, United States</td>
+    <td style="text-align: right">69.20</td>
+    <td style="text-align: right">29.09</td>
+    <td style="text-align: right">49.86</td>
+    <td style="text-align: right">71.91</td>
+    <td style="text-align: right">64.38</td>
+    <td style="text-align: right">120.54</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Montreal, Canada</td>
+    <td style="text-align: right">69.18</td>
+    <td style="text-align: right">26.68</td>
+    <td style="text-align: right">48.69</td>
+    <td style="text-align: right">68.65</td>
+    <td style="text-align: right">67.17</td>
+    <td style="text-align: right">120.29</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Gatineau, Canada</td>
+    <td style="text-align: right">69.17</td>
+    <td style="text-align: right">19.72</td>
+    <td style="text-align: right">45.32</td>
+    <td style="text-align: right">69.98</td>
+    <td style="text-align: right">64.66</td>
+    <td style="text-align: right">142.51</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Columbus, OH, United States</td>
+    <td style="text-align: right">69.13</td>
+    <td style="text-align: right">35.51</td>
+    <td style="text-align: right">52.92</td>
+    <td style="text-align: right">66.96</td>
+    <td style="text-align: right">62.16</td>
+    <td style="text-align: right">125.47</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Cincinnati, OH, United States</td>
+    <td style="text-align: right">69.13</td>
+    <td style="text-align: right">31.11</td>
+    <td style="text-align: right">50.79</td>
+    <td style="text-align: right">61.60</td>
+    <td style="text-align: right">70.40</td>
+    <td style="text-align: right">136.92</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Kansas City, MO, United States</td>
+    <td style="text-align: right">69.05</td>
+    <td style="text-align: right">29.33</td>
+    <td style="text-align: right">49.89</td>
+    <td style="text-align: right">68.17</td>
+    <td style="text-align: right">63.04</td>
+    <td style="text-align: right">135.76</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Lincoln, NE, United States</td>
+    <td style="text-align: right">68.61</td>
+    <td style="text-align: right">28.38</td>
+    <td style="text-align: right">49.21</td>
+    <td style="text-align: right">71.56</td>
+    <td style="text-align: right">62.02</td>
+    <td style="text-align: right">124.13</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Fort Myers, FL, United States</td>
+    <td style="text-align: right">68.06</td>
+    <td style="text-align: right">31.90</td>
+    <td style="text-align: right">50.62</td>
+    <td style="text-align: right">71.88</td>
+    <td style="text-align: right">62.43</td>
+    <td style="text-align: right">86.87</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Lexington, KY, United States</td>
+    <td style="text-align: right">67.90</td>
+    <td style="text-align: right">25.51</td>
+    <td style="text-align: right">47.45</td>
+    <td style="text-align: right">69.03</td>
+    <td style="text-align: right">62.48</td>
+    <td style="text-align: right">130.77</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Fort Worth, TX, United States</td>
+    <td style="text-align: right">67.81</td>
+    <td style="text-align: right">35.29</td>
+    <td style="text-align: right">52.12</td>
+    <td style="text-align: right">66.57</td>
+    <td style="text-align: right">65.50</td>
+    <td style="text-align: right">142.22</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Omaha, NE, United States</td>
+    <td style="text-align: right">67.80</td>
+    <td style="text-align: right">30.43</td>
+    <td style="text-align: right">49.78</td>
+    <td style="text-align: right">69.41</td>
+    <td style="text-align: right">62.64</td>
+    <td style="text-align: right">134.51</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Vancouver, WA, United States</td>
+    <td style="text-align: right">67.79</td>
+    <td style="text-align: right">34.12</td>
+    <td style="text-align: right">51.55</td>
+    <td style="text-align: right">61.12</td>
+    <td style="text-align: right">67.28</td>
+    <td style="text-align: right">127.95</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Surrey, Canada</td>
+    <td style="text-align: right">67.37</td>
+    <td style="text-align: right">33.36</td>
+    <td style="text-align: right">50.97</td>
+    <td style="text-align: right">65.23</td>
+    <td style="text-align: right">61.60</td>
+    <td style="text-align: right">93.78</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Wichita, KS, United States</td>
+    <td style="text-align: right">67.02</td>
+    <td style="text-align: right">24.63</td>
+    <td style="text-align: right">46.58</td>
+    <td style="text-align: right">67.02</td>
+    <td style="text-align: right">68.10</td>
+    <td style="text-align: right">118.39</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Lubbock, TX, United States</td>
+    <td style="text-align: right">66.90</td>
+    <td style="text-align: right">24.63</td>
+    <td style="text-align: right">46.52</td>
+    <td style="text-align: right">61.64</td>
+    <td style="text-align: right">68.94</td>
+    <td style="text-align: right">133.25</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Chattanooga, TN, United States</td>
+    <td style="text-align: right">66.89</td>
+    <td style="text-align: right">27.77</td>
+    <td style="text-align: right">48.02</td>
+    <td style="text-align: right">67.80</td>
+    <td style="text-align: right">62.68</td>
+    <td style="text-align: right">145.27</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Phoenix, AZ, United States</td>
+    <td style="text-align: right">66.87</td>
+    <td style="text-align: right">33.32</td>
+    <td style="text-align: right">50.69</td>
+    <td style="text-align: right">62.40</td>
+    <td style="text-align: right">71.42</td>
+    <td style="text-align: right">139.29</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Sioux Falls, SD, United States</td>
+    <td style="text-align: right">66.85</td>
+    <td style="text-align: right">25.70</td>
+    <td style="text-align: right">47.00</td>
+    <td style="text-align: right">69.13</td>
+    <td style="text-align: right">56.18</td>
+    <td style="text-align: right">168.93</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Salt Lake City, UT, United States</td>
+    <td style="text-align: right">66.76</td>
+    <td style="text-align: right">34.91</td>
+    <td style="text-align: right">51.40</td>
+    <td style="text-align: right">64.48</td>
+    <td style="text-align: right">68.75</td>
+    <td style="text-align: right">148.60</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Tulsa, OK, United States</td>
+    <td style="text-align: right">66.71</td>
+    <td style="text-align: right">28.61</td>
+    <td style="text-align: right">48.34</td>
+    <td style="text-align: right">67.60</td>
+    <td style="text-align: right">62.03</td>
+    <td style="text-align: right">123.20</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Durham, NC, United States</td>
+    <td style="text-align: right">66.44</td>
+    <td style="text-align: right">35.54</td>
+    <td style="text-align: right">51.54</td>
+    <td style="text-align: right">64.75</td>
+    <td style="text-align: right">67.79</td>
+    <td style="text-align: right">146.95</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Springfield, MO, United States</td>
+    <td style="text-align: right">66.40</td>
+    <td style="text-align: right">18.79</td>
+    <td style="text-align: right">43.44</td>
+    <td style="text-align: right">73.60</td>
+    <td style="text-align: right">63.28</td>
+    <td style="text-align: right">77.68</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Winston-Salem, NC, United States</td>
+    <td style="text-align: right">66.27</td>
+    <td style="text-align: right">24.96</td>
+    <td style="text-align: right">46.34</td>
+    <td style="text-align: right">71.92</td>
+    <td style="text-align: right">69.63</td>
+    <td style="text-align: right">117.44</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Dallas, TX, United States</td>
+    <td style="text-align: right">65.94</td>
+    <td style="text-align: right">42.64</td>
+    <td style="text-align: right">54.70</td>
+    <td style="text-align: right">61.95</td>
+    <td style="text-align: right">67.11</td>
+    <td style="text-align: right">162.37</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Albuquerque, NM, United States</td>
+    <td style="text-align: right">65.73</td>
+    <td style="text-align: right">25.50</td>
+    <td style="text-align: right">46.33</td>
+    <td style="text-align: right">68.04</td>
+    <td style="text-align: right">64.58</td>
+    <td style="text-align: right">123.57</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Arlington, TX, United States</td>
+    <td style="text-align: right">65.63</td>
+    <td style="text-align: right">30.04</td>
+    <td style="text-align: right">48.47</td>
+    <td style="text-align: right">62.02</td>
+    <td style="text-align: right">63.87</td>
+    <td style="text-align: right">152.90</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Madison, WI, United States</td>
+    <td style="text-align: right">65.60</td>
+    <td style="text-align: right">36.95</td>
+    <td style="text-align: right">51.78</td>
+    <td style="text-align: right">62.50</td>
+    <td style="text-align: right">66.34</td>
+    <td style="text-align: right">144.83</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Mobile, AL, United States</td>
+    <td style="text-align: right">65.31</td>
+    <td style="text-align: right">24.63</td>
+    <td style="text-align: right">45.69</td>
+    <td style="text-align: right">67.40</td>
+    <td style="text-align: right">64.09</td>
+    <td style="text-align: right">122.20</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Hamilton, Canada</td>
+    <td style="text-align: right">65.26</td>
+    <td style="text-align: right">27.60</td>
+    <td style="text-align: right">47.10</td>
+    <td style="text-align: right">60.77</td>
+    <td style="text-align: right">65.83</td>
+    <td style="text-align: right">122.71</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Louisville, KY, United States</td>
+    <td style="text-align: right">65.14</td>
+    <td style="text-align: right">28.33</td>
+    <td style="text-align: right">47.39</td>
+    <td style="text-align: right">65.76</td>
+    <td style="text-align: right">65.91</td>
+    <td style="text-align: right">127.21</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Pensacola, FL, United States</td>
+    <td style="text-align: right">64.88</td>
+    <td style="text-align: right">28.72</td>
+    <td style="text-align: right">47.44</td>
+    <td style="text-align: right">62.12</td>
+    <td style="text-align: right">64.75</td>
+    <td style="text-align: right">128.73</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Oklahoma City, OK, United States</td>
+    <td style="text-align: right">64.29</td>
+    <td style="text-align: right">26.54</td>
+    <td style="text-align: right">46.09</td>
+    <td style="text-align: right">66.52</td>
+    <td style="text-align: right">58.15</td>
+    <td style="text-align: right">142.40</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Kitchener, Canada</td>
+    <td style="text-align: right">63.90</td>
+    <td style="text-align: right">27.36</td>
+    <td style="text-align: right">46.28</td>
+    <td style="text-align: right">58.85</td>
+    <td style="text-align: right">59.89</td>
+    <td style="text-align: right">124.25</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Huntsville, AL, United States</td>
+    <td style="text-align: right">63.34</td>
+    <td style="text-align: right">27.45</td>
+    <td style="text-align: right">46.03</td>
+    <td style="text-align: right">64.13</td>
+    <td style="text-align: right">63.83</td>
+    <td style="text-align: right">152.26</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Tucson, AZ, United States</td>
+    <td style="text-align: right">63.00</td>
+    <td style="text-align: right">23.80</td>
+    <td style="text-align: right">44.10</td>
+    <td style="text-align: right">61.12</td>
+    <td style="text-align: right">63.64</td>
+    <td style="text-align: right">138.07</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Reno, NV, United States</td>
+    <td style="text-align: right">62.88</td>
+    <td style="text-align: right">35.99</td>
+    <td style="text-align: right">49.92</td>
+    <td style="text-align: right">58.04</td>
+    <td style="text-align: right">64.10</td>
+    <td style="text-align: right">136.40</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Boise, ID, United States</td>
+    <td style="text-align: right">62.65</td>
+    <td style="text-align: right">28.91</td>
+    <td style="text-align: right">46.37</td>
+    <td style="text-align: right">58.70</td>
+    <td style="text-align: right">65.39</td>
+    <td style="text-align: right">130.86</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Knoxville, TN, United States</td>
+    <td style="text-align: right">62.18</td>
+    <td style="text-align: right">29.77</td>
+    <td style="text-align: right">46.55</td>
+    <td style="text-align: right">60.36</td>
+    <td style="text-align: right">64.67</td>
+    <td style="text-align: right">128.69</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">College Station, TX, United States</td>
+    <td style="text-align: right">61.85</td>
+    <td style="text-align: right">32.70</td>
+    <td style="text-align: right">47.79</td>
+    <td style="text-align: right">68.95</td>
+    <td style="text-align: right">57.12</td>
+    <td style="text-align: right">118.70</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">San Antonio, TX, United States</td>
+    <td style="text-align: right">60.92</td>
+    <td style="text-align: right">34.50</td>
+    <td style="text-align: right">48.18</td>
+    <td style="text-align: right">58.17</td>
+    <td style="text-align: right">60.96</td>
+    <td style="text-align: right">154.92</td>
+ </tr>
+ <tr style="width: 100%">
+  <td></td>
+    <td class="cityOrCountryInIndicesTable">Athens, GA, United States</td>
+    <td style="text-align: right">60.55</td>
+    <td style="text-align: right">26.67</td>
+    <td style="text-align: right">44.21</td>
+    <td style="text-align: right">57.85</td>
+    <td style="text-align: right">59.58</td>
+    <td style="text-align: right">110.52</td>
+ </tr>
+
+    </tbody>
+</table>
+    <script>
+  $(document).ready(function() {
+    var t_t2 = $('#t2').DataTable({
+  'columnDefs': [ {
+      'searchable': false,
+      'orderable': false,
+      'targets': 0
+  } ],
+        'paging': false,
+        'order': [[ 2, "desc" ]]
+,    });
+    t_t2.on( 'order.dt search.dt', function () {
+        t_t2.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            cell.innerHTML = i+1;
+        } );
+    } ).draw();
+  });
+</script>
+
+</div>
+
+
+<!-- numbeo_bottom_big_50 -->
+<div class="standard_margin">
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-8993465169534557"
+     data-ad-slot="1669267119"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<!-- Column 1 end -->
+
+<br/>
+<div id="fb-root"></div>
+<div class="footer_content">
+<a href="https://www.numbeo.com/common/about.jsp">About</a><span class="footer_separator"></span>
+<a href="https://www.numbeo.com/common/in_the_news.jsp">In the News</a><span class="footer_separator"></span>
+<a href="https://www.numbeo.com/common/join_community.jsp">Newsletter</a><span class="footer_separator"></span>
+<a href="https://www.numbeo.com/common/api.jsp" rel="nofollow">API</a><p>
+<span style="font-style: italic">
+Copyright &copy; 2009-2019 Numbeo. Your use of this service is subject to our 
+<a href="https://www.numbeo.com/common/terms_of_use.jsp">Terms of Use</a> and 
+<a href="https://www.numbeo.com/common/privacy.jsp">Privacy Policy</a>
+</span></p>
+</div>
+</div> <!-- end of innerWidth --> 
+
+  <script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=182369865155656";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<script>
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script>
+try {
+var pageTracker = _gat._getTracker("UA-10969791-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+    </body>
+</html>
+
+
+

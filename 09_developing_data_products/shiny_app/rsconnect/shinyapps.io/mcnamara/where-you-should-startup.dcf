@@ -1,0 +1,12 @@
+name: where-you-should-startup
+title: where-you-should-startup
+username:
+account: mcnamara
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1007241
+bundleId: 2192128
+url: https://mcnamara.shinyapps.io/where-you-should-startup/
+when: 1562010241.33158
+asMultiple: FALSE
+asStatic: FALSE

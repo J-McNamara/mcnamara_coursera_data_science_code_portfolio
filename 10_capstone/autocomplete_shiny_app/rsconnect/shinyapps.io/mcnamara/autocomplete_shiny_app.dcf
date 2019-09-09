@@ -1,0 +1,12 @@
+name: autocomplete_shiny_app
+title: autocomplete_shiny_app
+username:
+account: mcnamara
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1097406
+bundleId: 2395393
+url: https://mcnamara.shinyapps.io/autocomplete_shiny_app/
+when: 1567893071.87392
+asMultiple: FALSE
+asStatic: FALSE

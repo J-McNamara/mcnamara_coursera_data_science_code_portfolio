@@ -1,0 +1,136 @@
+---
+title: 'Capstone: Exploratory analysis'
+author: "Josh McNamara"
+date: "7/29/2019"
+output: html_document
+---
+# Overview
+### The motivation for this project is to:
+1. Demonstrate that you've downloaded the data and have successfully loaded it in.
+2. Create a basic report of summary statistics about the data sets.
+3. Report any interesting findings that you amassed so far.
+4. Get feedback on your plans for creating a prediction algorithm and Shiny app
+
+### Review criteria:
+1. Does the link lead to an HTML page describing the exploratory analysis of the training data set?
+2. Has the data scientist done basic summaries of the three files? Word counts, line counts and basic data tables?
+3. Has the data scientist made basic plots, such as histograms to illustrate features of the data?
+4. Was the report written in a brief, concise style, in a way that a non-data scientist manager could appreciate?
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(magrittr)
+
+```
+
+# Exploratory analysis 
+### What are the general dimensions of the corpora?
+
+Here we will assess the general shape and size of the datasets before cleaning them up for analysis.
+
+### Load in the data
+```{r echo=FALSE}
+
+# Files
+path <- '~/Desktop/OneDrive - Johns Hopkins University/r_programming/coursera_data_science_courses/10_capstone/'
+setwd(path)
+twit <- 'final/en_US/en_US.twitter.txt'
+news <- 'final/en_US/en_US.news.txt'
+blog <- 'final/en_US/en_US.blogs.txt'
+sources <- c(twit, news, blog)
+source_names <- c('twit', 'news', 'blog')
+```
+
+
+### How big are the datasets? How do thier gross structures compare?
+
+```{r echo=FALSE}
+# How big are the files?
+print('How big are the files in Mb? Listed for twitter, news, blog, respectively.')
+file.info(c(twit, news, blog))$size / 1e6
+```
+
+It seems that the files are roughly the same size, around 200 Mb each. This is large enough that memory will become scarce, so we will conduct operations by iteratively reading lines.
+
+```{r echo=FALSE}
+# Make a vector of how many words are on each line
+word_counter <- function(text) {
+        sapply(length, X=strsplit(readLines(text), ' '))
+}
+#word_counts <- sapply(word_counter, X =sources)
+#save(x=word_counts, file = 'word_counts.Rda')
+load('word_counts.Rda')
+
+#Plot how many lines are in each file
+print('The corpora has the following number of lines for the twitter, news, and blog datasets, respectively')
+sum <- as.numeric(summary(word_counts)[1:3])
+print(sum)
+barplot(sum, names = c('twitter', 'news', 'blog'), ylab = 'number of lines in file')
+```
+
+Despite being roughtly the same size, the files have substantially different line counts. They must have substantually different amounts of content per line. Let's see:
+
+```{r echo=FALSE}
+# How long are the lines, on average?
+print('Word count stats for twitter, news, blog')
+for (i in 1:3){
+        print(source_names[i])
+        print(summary(word_counts[[i]]))
+}
+```
+
+It seems that the Twitter set has the shortest lines, the news has a medium line length, and the blog set has a medium-long line length with a high skew  (based on mean-median spread)
+
+It would be informative to look at some histograms.
+
+The list data format is a little cumbersome. Let's make a data frame with all of the word count data to make plotting more straightforward.
+
+```{r echo=FALSE}
+# Put all of the word counts in a data frame
+twit_counts<- data.frame(word_counts[[1]])
+twit_counts$set <- 'twit'
+colnames(twit_counts)[1] <- 'counts'
+
+news_counts <- data.frame(word_counts[[2]])
+news_counts$set <- 'news'
+colnames(news_counts)[1] <- 'counts'
+
+blog_counts <- data.frame(word_counts[[3]])
+blog_counts$set <- 'blog'
+colnames(blog_counts)[1] <- 'counts'
+
+counts <- rbind(twit_counts, news_counts, blog_counts)
+
+```
+
+Now let's see some frequency density plots:
+
+```{r echo=FALSE}
+library(ggplot2)
+
+p <- ggplot(counts, aes(x=counts, group=set, color=set)) + 
+        geom_density() + 
+        xlim(1,150)+
+        xlab('Word count per line')
+p
+```
+
+As expected from the rules of the medium, Twitter posts are rarely longer than ~30 words. Blog post lengths are distributed broadly, and news article lines are mostly around 30 words. These are probably just sentences lifted from individual articles.
+
+## Content analysis
+Let's look at something obscure just for fun.
+
+Given that the prediction algorithm will need to avoid suggesting profanity, it may be instructive to determine which media are the most profane.
+
+```{r echo=FALSE}
+print('Percent of lines in each file that contain the f-word, in order twitter, news, blog')
+length(grep('fuck', readLines(twit))) * 100 / length(counts$set==twit)
+length(grep('fuck', readLines(news))) * 100 / length(counts$set==news)
+length(grep('fuck', readLines(blog))) * 100 / length(counts$set==blog)
+```
+
+
+
+

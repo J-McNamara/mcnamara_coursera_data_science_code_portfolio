@@ -1,0 +1,954 @@
+﻿city,patents
+San Jose,14618
+New York,7754
+San Francisco,9732
+Los Angeles,6476
+Boston,5949
+Chicago,3909
+San Diego,5460
+Seattle,4739
+Minneapolis,3419
+Detroit,3305
+Dallas,3026
+Austin,2700
+Philadelphia,2357
+Houston,3186
+Portland,2163
+Washington,2310
+Atlanta,2143
+Phoenix,1764
+Rochester,1217
+Boise City,722
+Raleigh,1535
+Miami,1338
+Cincinnati,1048
+Denver,1202
+Cleveland,922
+Pittsburgh,895
+Albany,1090
+Baltimore,846
+St. Louis,779
+Poughkeepsie,871
+Bridgeport,636
+Boulder,831
+Milwaukee,689
+Hartford,845
+Indianapolis,735
+Kansas City,816
+Ann Arbor,785
+Sacramento,659
+Oxnard,571
+Bremerton,907
+Santa Cruz,678
+Worcester,637
+Tucson,641
+Providence,496
+Durham,607
+Tampa,624
+Salt Lake City,643
+Burlington,367
+Columbus,445
+New Haven,457
+Riverside,484
+Rochester,564
+Fort Collins,392
+Trenton,542
+Akron,373
+Madison,455
+Allentown,320
+Palm Bay,450
+Manchester,376
+Orlando,446
+Charlotte,451
+San Antonio,413
+Buffalo,254
+Santa Barbara,468
+Albuquerque,294
+Greenville,479
+Las Vegas,418
+Colorado Springs,204
+Provo,396
+Dayton,260
+Corvallis,135
+Peoria,410
+Memphis,326
+Reno,243
+Santa Rosa,233
+Greeley,280
+Richmond,243
+Lexington,181
+Des Moines,218
+Nashville,220
+Knoxville,218
+Syracuse,217
+Grand Rapids,217
+Louisville/Jefferson County,300
+Binghamton,109
+Holland,166
+Huntsville,190
+Toledo,146
+Virginia Beach,143
+Oklahoma City,155
+Appleton,108
+Cedar Rapids,193
+Jacksonville,202
+Canton,121
+Tulsa,174
+Norwich,108
+Fort Wayne,141
+Greensboro,159
+Ogden,197
+Springfield,165
+Harrisburg,125
+North Port,141
+Oshkosh,98
+New Orleans,134
+Portland,143
+Gainesville,187
+Lancaster,148
+Omaha,178
+Champaign,166
+Wichita,110
+Ithaca,140
+Lafayette,191
+Rockford,155
+Flint,120
+Winston,147
+Kalamazoo,100
+York,114
+Birmingham,112
+Baton Rouge,82
+South Bend,110
+Racine,97
+Kingsport,75
+Port St. Lucie,93
+Lansing,93
+Erie,91
+Spokane,104
+San Luis Obispo,117
+Hickory,106
+Kingston,77
+Reading,61
+Charlottesville,92
+Columbia,94
+Niles,137
+Eugene,79
+Evansville,118
+Davenport,76
+Kennewick,84
+Charleston,69
+Ames,84
+Blacksburg,84
+Spartanburg,60
+Salinas,74
+Honolulu,88
+State College,72
+Lincoln,72
+Bakersfield,85
+Iowa City,85
+Elmira,75
+Bloomington,129
+Youngstown,66
+Scranton,42
+Roanoke,98
+Stockton,94
+Naples,81
+Asheville,57
+Logan,89
+Deltona,62
+Columbus,91
+Lafayette,62
+Kokomo,36
+College Station,67
+Little Rock,61
+Tallahassee,52
+Vallejo,67
+Cape Coral,85
+Fargo,75
+Saginaw,60
+Wilmington,54
+Fresno,72
+Augusta,54
+Chattanooga,45
+Idaho Falls,34
+Elkhart,47
+Bend,67
+Fayetteville,80
+Barnstable Town,52
+Sheboygan,60
+Monroe,56
+Bellingham,56
+Athens,49
+Salem,36
+Santa Fe,50
+Pensacola,48
+Green Bay,42
+Modesto,36
+Flagstaff,64
+El Paso,34
+Olympia,43
+Eau Claire,43
+Waterloo,49
+Lakeland,40
+Lynchburg,46
+Columbia,34
+Charleston,26
+Sioux City,25
+Florence,23
+Springfield,35
+Napa,43
+Janesville,39
+Bloomington,74
+Anderson,45
+Lawrence,52
+Jackson,27
+Dubuque,61
+Jackson,39
+Anchorage,26
+Sioux Falls,42
+Johnson City,28
+Fond du Lac,25
+Ocala,25
+Lubbock,25
+Pittsfield,36
+Anderson,33
+Springfield,37
+Utica,40
+Joplin,25
+Auburn,25
+Mankato,41
+Corpus Christi,45
+Panama City,17
+Gainesville,28
+Beaumont,34
+Jackson,11
+Shreveport,30
+Battle Creek,27
+Prescott,30
+Bay City,22
+Medford,51
+Parkersburg,14
+Mobile,16
+Savannah,34
+Houma,24
+Duluth,34
+La Crosse,22
+Morgantown,32
+Manhattan,39
+Longview,20
+Glens Falls,38
+Muskegon,15
+Greenville,24
+Tyler,22
+Midland,33
+Williamsport,12
+Decatur,17
+Sebastian,38
+Sherman,16
+Coeur d'Alene,35
+San Juan,21
+Burlington,26
+Punta Gorda,22
+Hagerstown,18
+St. Cloud,21
+Gulfport,12
+Macon,16
+Atlantic City,12
+Crestview,18
+Montgomery,17
+Killeen,21
+Myrtle Beach,22
+St. George,25
+Amarillo,18
+Wausau,11
+Grand Junction,21
+Springfield,16
+Lebanon,18
+Chico,16
+Redding,16
+Winchester,21
+Waco,17
+Las Cruces,8
+Morristown,16
+Grand Forks,14
+Kankakee,10
+Missoula,19
+Huntington,14
+Bangor,18
+Visalia,12
+Mount Vernon,23
+Odessa,16
+Decatur,12
+Tuscaloosa,25
+Bowling Green,10
+Yakima,7
+Fayetteville,13
+Lake Charles,8
+Michigan City,12
+Fort Smith,17
+Columbus,12
+Topeka,8
+Pueblo,18
+St. Joseph,4
+Dalton,9
+Terre Haute,7
+Dover,8
+Billings,13
+Longview,8
+Clarksville,8
+Mansfield,12
+Monroe,12
+Johnstown,7
+Rapid City,10
+Sandusky,9
+Cleveland,4
+Wichita Falls,10
+Bismarck,4
+Wheeling,6
+Lake Havasu City,11
+Palm Coast,13
+Madera,13
+Elizabethtown,9
+Owensboro,8
+McAllen,14
+Salisbury,4
+Carson City,5
+Jonesboro,25
+Florence,11
+Hattiesburg,9
+Muncie,7
+Altoona,12
+Yuba City,3
+Albany,28
+Farmington,5
+Harrisonburg,8
+Merced,8
+Rocky Mount,7
+Cheyenne,18
+Brownsville,13
+Pocatello,4
+Vineland,8
+Pascagoula,2
+Alexandria,7
+Rome,8
+Hot Springs,3
+Cape Girardeau,2
+Wenatchee,6
+Steubenville,2
+Anniston,5
+Lewiston,6
+Brunswick,5
+Jefferson City,10
+Yuma,5
+Texarkana,2
+Abilene,8
+Ocean City,5
+Dothan,4
+Warner Robins,5
+Danville,3
+Lima,5
+Sumter,2
+Victoria,3
+Gadsden,1
+Valdosta,5
+Jacksonville,11
+Cumberland,0
+Fairbanks,4
+Aguadilla,3
+Danville,2
+Great Falls,3
+Casper,5
+Mayag�ez,3
+Hanford,0
+San Angelo,3
+El Centro,3
+Goldsboro,2
+Lawton,4
+Lewiston,3
+Laredo,4
+Pine Bluff,0
+Hinesville,0
+Ponce,0
+San Germ�n,1
+Guayama,0
+Yauco,1
+Fajardo,0
+Corning,165
+Midland,187
+Torrington,91
+Duncan,60
+Warsaw,149
+Lebanon,96
+Concord,82
+Bartlesville,59
+Los Alamos,50
+Truckee,38
+Bozeman,50
+Albany,41
+Gardnerville Ranchos,44
+Wooster,52
+Kalispell,29
+Greenville,27
+Adrian,33
+Pullman,46
+Ottawa,42
+Red Wing,48
+Allegan,26
+Statesville,27
+Owatonna,38
+Beaver Dam,19
+Whitewater,23
+Willimantic,24
+Stillwater,12
+Traverse City,27
+Cookeville,18
+Marshalltown,52
+Faribault,35
+Keene,22
+Jackson,26
+Manitowoc,27
+Hilton Head Island,19
+East Stroudsburg,12
+Effingham,17
+Key West,23
+Watertown,18
+Auburn,16
+Pella,16
+Willmar,16
+Laramie,20
+Rolla,20
+Ponca City,2
+Kahului,21
+Houghton,10
+Athens,25
+Claremont,26
+Freeport,12
+New Philadelphia,12
+Brainerd,26
+Findlay,15
+Sidney,20
+Seneca,9
+Starkville,8
+Baraboo,9
+Hilo,12
+Watertown,9
+Laconia,14
+Barre,12
+Oak Harbor,23
+Oskaloosa,19
+Moscow,9
+Wapakoneta,13
+Chambersburg,13
+Brigham City,13
+Hudson,10
+Sayre,3
+Hutchinson,16
+Tupelo,9
+Seaford,8
+Southern Pines,15
+Staunton,6
+Rochelle,16
+Batavia,5
+Ukiah,10
+Rutland,19
+Jamestown,8
+LaGrange,7
+Daphne,13
+Marquette,19
+East Liverpool,13
+Thomasville,15
+Pottsville,13
+Kendallville,6
+Auburn,7
+Brookings,14
+New Bern,11
+New Iberia,8
+Richmond,6
+Bennington,10
+Indiana,12
+Granbury,18
+Lincolnton,14
+Walla Walla,18
+Eureka,5
+Gettysburg,7
+Taylorville,5
+Sanford,14
+Newton,5
+Phoenix Lake,8
+Jasper,6
+New Castle,4
+Blackfoot,7
+Muscatine,6
+Winona,18
+Lancaster,17
+Alexandria,4
+Marion,7
+Ogdensburg,15
+Greenville,4
+Owosso,10
+Cortland,6
+Edwards,20
+Galesburg,5
+Grants Pass,9
+Lexington Park,10
+Richmond,9
+Athens,16
+Bellefontaine,4
+Meadville,9
+Pendleton,5
+Wilmington,8
+Albertville,11
+Angola,6
+Ottumwa,9
+Amsterdam,12
+Sierra Vista,9
+Celina,8
+Olean,7
+Port Angeles,16
+Homosassa Springs,3
+Plymouth,3
+Jamestown,6
+Kearney,10
+Marshfield,15
+Sterling,5
+Arkadelphia,0
+Ashtabula,6
+Bedford,7
+Twin Falls,10
+Durango,12
+Norwalk,7
+Crawfordsville,7
+Shelby,6
+Tullahoma,3
+Danville,5
+Ashland,3
+Fergus Falls,16
+Humboldt,2
+McPherson,14
+Quincy,3
+Somerset,8
+Columbus,9
+Ruston,9
+Greeneville,10
+Austin,5
+Greenwood,8
+Oxford,6
+Oil City,11
+Rockland,2
+Heber,11
+Silverthorne,10
+Bloomsburg,5
+Boone,12
+Carbondale,6
+Salisbury,10
+Augusta,7
+Marinette,6
+Mount Airy,4
+Cullman,4
+Hood River,11
+Morgan City,2
+Seymour,14
+Harriman,6
+Mount Pleasant,3
+Mount Vernon,3
+Plattsburgh,5
+Ardmore,3
+Burlington,8
+Kinston,2
+Monroe,3
+Connersville,1
+Gainesville,13
+Dunn,2
+Stevens Point,5
+Easton,10
+Lincoln,3
+Paducah,8
+Huntington,6
+Roseburg,6
+Norfolk,5
+Picayune,7
+Hutchinson,9
+Menomonie,6
+Boone,6
+Charleston,2
+Platteville,5
+Wahpeton,5
+Cadillac,6
+Greensburg,2
+Marble Falls,4
+Sebring,3
+Aberdeen,4
+Gloversville,5
+Oneonta,8
+Salina,3
+Sevierville,7
+Ada,7
+Riverton,2
+Sturgis,1
+Grand Island,4
+Hammond,3
+Mineral Wells,2
+Shelton,5
+Dixon,15
+Marion,2
+Urbana,3
+Branson,3
+Farmington,6
+Meridian,3
+Astoria,2
+Defiance,2
+Frankfort,6
+Macomb,0
+Pontiac,0
+Clearlake,1
+Marion,2
+Moses Lake,7
+Nacogdoches,5
+Vicksburg,2
+Wabash,1
+Wilson,4
+Huntsville,6
+Kerrville,6
+Madison,12
+Watertown,4
+Butte,7
+Coldwater,0
+Morehead City,1
+Rock Springs,7
+Warren,0
+Canyon City,4
+Muskogee,3
+Palatka,3
+Fort Madison,4
+Pittsburg,3
+Fredericksburg,5
+Kapaa,6
+Laurinburg,0
+Decatur,6
+Enterprise,1
+Fremont,1
+Fremont,5
+Klamath Falls,6
+Marshall,6
+Ocean Pines,6
+Spirit Lake,2
+Tiffin,6
+Tifton,7
+Frankfort,3
+Payson,9
+Beatrice,1
+Escanaba,2
+St. Marys,2
+Yankton,5
+Beckley,12
+Bemidji,7
+Lake City,2
+Opelousas,4
+Orangeburg,3
+Alma,0
+Bluefield,2
+Centralia,6
+Chillicothe,3
+Cambridge,9
+Clinton,5
+Martinsville,6
+Cedar City,5
+DuBois,3
+Forest City,13
+Ontario,3
+Columbus,3
+Georgetown,5
+Merrill,4
+Clarksburg,2
+Cornelia,5
+Helena,3
+Lewistown,3
+Mason City,8
+Columbia,5
+Dickinson,4
+Emporia,3
+Plainview,3
+Union City,7
+Brevard,3
+Gillette,1
+Montrose,4
+Garden City,3
+Seneca Falls,5
+Show Low,2
+Thomasville,0
+Lewisburg,5
+Marshall,5
+Roswell,1
+Taos,1
+Washington,4
+Winfield,1
+Moberly,3
+Sunbury,3
+Bucyrus,2
+Coos Bay,1
+Marshall,3
+Rexburg,4
+Vermillion,5
+Athens,4
+Espanola,2
+Miami,1
+Bradford,1
+Crowley,7
+Fernley,3
+Russellville,5
+Safford,3
+Fort Dodge,3
+Laurel,2
+Logansport,2
+Albemarle,5
+Coffeyville,2
+Coshocton,2
+Madisonville,1
+Scottsburg,1
+Abbeville,1
+Burley,5
+Fort Payne,1
+North Wilkesboro,2
+Shawnee,2
+Sheridan,2
+Brownwood,2
+Cambridge,1
+Dyersburg,2
+Mount Vernon,3
+Zanesville,1
+Bonham,4
+Culpeper,6
+El Campo,0
+Evanston,1
+Lufkin,3
+New Castle,5
+Price,3
+Vernal,5
+The Villages,5
+Calhoun,2
+Ellensburg,6
+Hannibal,0
+Hastings,2
+Iron Mountain,5
+McMinnville,4
+Nogales,0
+Pahrump,4
+Scottsbluff,3
+Toccoa,1
+Waycross,2
+Alamogordo,2
+Cleveland,2
+Minot,3
+Bay City,1
+Brenham,1
+Dublin,0
+Hays,1
+Stephenville,3
+Aberdeen,5
+Mitchell,1
+Spearfish,2
+Williston,5
+Bogalusa,2
+Dodge City,3
+Elizabeth City,7
+Milledgeville,0
+Minden,0
+Red Bluff,3
+Shelbyville,1
+Durant,2
+Elko,3
+Enid,2
+Fairmont,1
+Las Vegas,0
+New Ulm,1
+Paris,1
+Atchison,1
+Blytheville,2
+Crossville,1
+Jesup,1
+Big Rapids,0
+Carlsbad,2
+Jacksonville,0
+Kill Devil Hills,1
+Arcadia,0
+Centralia,2
+Great Bend,0
+Lebanon,1
+Paragould,0
+Scottsboro,2
+Van Wert,4
+Weatherford,8
+Alexander City,2
+El Dorado,5
+Hope,4
+Malone,1
+Roanoke Rapids,1
+Sulphur Springs,2
+Talladega,5
+Washington,2
+Troy,2
+Albert Lea,1
+Canton,0
+Harrison,0
+Henderson,0
+Huntingdon,6
+Magnolia,1
+Peru,2
+Searcy,0
+Warrensburg,1
+Harrisburg,1
+Lexington,0
+Poplar Bluff,0
+St. Marys,2
+Sikeston,1
+Alpena,4
+Mountain Home,2
+Paris,2
+Selinsgrove,2
+Silver City,1
+Statesboro,0
+Vidalia,1
+Washington Court House,0
+West Plains,1
+Worthington,2
+Batesville,3
+Chester,4
+Hobbs,2
+Lumberton,2
+Mayfield,1
+Natchez,1
+Sedalia,0
+The Dalles,0
+Vincennes,2
+Greenwood,2
+Huron,1
+Mount Sterling,1
+Palestine,0
+Ruidoso,2
+Snyder,2
+Tahlequah,1
+Walterboro,1
+Brookings,1
+Eufaula,0
+Gaffney,2
+Juneau,1
+Lock Haven,1
+Maysville,1
+Mountain Home,1
+North Vernon,1
+Prineville,1
+Sterling,2
+Susanville,1
+Borger,1
+Glasgow,2
+La Follette,3
+Oak Hill,0
+Spencer,2
+Storm Lake,2
+Summerville,0
+Corbin,1
+Berlin,1
+Cordele,0
+Corinth,1
+Corsicana,4
+Jacksonville,3
+Lawrenceburg,0
+Levelland,0
+Martin,0
+Newberry,2
+Portsmouth,0
+Elk City,1
+Lewisburg,2
+McAlester,0
+Murray,2
+Okeechobee,1
+Selma,0
+Tallulah,0
+Alice,0
+Fort Valley,0
+Newport,3
+Sault Ste. Marie,0
+London,2
+Big Spring,2
+Camden,2
+Del Rio,0
+Fairmont,0
+Fallon,3
+Forrest City,1
+Kennett,2
+La Grande,0
+Maryville,0
+Moultrie,1
+North Platte,1
+Pampa,1
+Point Pleasant,0
+Tuskegee,1
+Beeville,0
+Crescent City,1
+DeRidder,2
+Douglas,3
+Woodward,1
+Cedartown,0
+Fort Leonard Wood,1
+Fort Morgan,1
+Mount Pleasant,1
+Clewiston,1
+Clovis,1
+Grenada,2
+McComb,0
+Mexico,0
+Parsons,2
+Altus,0
+Bennettsville,0
+Brookhaven,1
+Central City,0
+Guymon,0
+Kirksville,0
+Natchitoches,1
+Rockingham,0
+Union,1
+Wauchula,1
+Americus,1
+Campbellsville,0
+Fitzgerald,0
+Kodiak,0
+Brownsville,1
+Deming,0
+Havre,1
+Thomaston,2
+West Point,1
+Andrews,0
+Bainbridge,0
+Bastrop,1
+Dillon,0
+Hereford,0
+Indianola,0
+Pierre,0
+Bishop,1
+Coamo,0
+Dumas,0
+Fort Polk South,0
+Gallup,0
+Liberal,0
+Middlesborough,0
+Somerset,0
+Uvalde,0
+Yazoo City,0
+Ketchikan,1
+Eagle Pass,0
+Lamesa,0
+Portales,0
+Sweetwater,0
+Vernon,1
+Valley,0
+Grants,0
+Jennings,0
+Kingsville,0
+Helena,0
+Pierre Part,0
+Rio Grande City,1
+Clarksdale,0
+Pecos,1
+Raymondville,0
+Santa Isabel,1
+Utuado,0
